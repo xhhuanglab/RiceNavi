@@ -1,4 +1,3 @@
-# RiceNavi_offline
 ## RiceNavi
 
 
@@ -17,55 +16,82 @@ Advances in functional studies and extensive allelic variation in agronomically 
 
 
 
+---
+
+
+
 ### RiceNavi-QTNpick
 
-Taking adavantage of the integrated QTN map, the RiceNavi-QTNpick package can take mapping BAM file of the rice sample as input as  the receptor line, and call the genotype of the sample at the causative sites. The genotype of  the sample is compared to those of the QTN samples. This further provides the allele information of the user’s sample and the samples harboring the alterative allele for each QTN, including the function of the alleles. Users can pick the beneficial QTN(s). After choosing the QTN(s), the donor sample list will be provided.
+Taking adavantage of the integrated QTN map, the RiceNavi-QTNpick package can take mapping BAM file of user's rice sample (receptor rice sample) as input, and call the genotype of the sample at the causative sites. The genotype of  the user's sample is compared to those of the samples in the QTN library, after which the QTN library samples harboring the alterative allele for each QTN could be provided. Users can pick the beneficial QTN(s). After picking the QTN(s), the donor sample list will be provided.
 
 Before running RiceNavi-QTNpick package, the BAM file of the rice sample is need to be genenerated by User.
 Please use the rice genome MSU v7 as the reference. We also provide a script `pre_mapping_to_bam_pipeline.pl` (in the RiceNavi-QTNpick directory) for users to generate realigned.bam with Paired-end fastq files as  inputs. 
 
-After BAM file is available, further steps could be performed.
+Generate 'realigned.bam' with User sample's paired-end fastq files as  inputs. 
 
-**Step1: Genotyping causal variant sites for User's sample (bam file as input).**
-`perl step1_Indiv_CausalVar_genotyping.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`
+CMD: `perl pre_mapping_to_bam_pipeline.pl RiceNavi-QTNpick.cfg fq1 fq2 SamplePrefix `   
 
 In the 'RiceNavi-QTNpick.cfg' file, please edit the PATH to the required softwares.
+
+After BAM file is available, further steps could be performed.
+
+
+
+**Step1: Genotyping causal variant sites for User's sample.**  
+
+CMD: `perl step1_Indiv_CausalVar_genotyping.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`   
+
 Then the combined genotype file is generated: SamplePrefix.RiceNavi_Causal_Var.site.geno
 
 
 
-**Step2: Find rice accessions in our QTNlib with different allele of each causative site.**
-`perl step2_samples_with_diff_CausalVar.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno>`
-Output: 'SamplePrefix.RiceNavi_Causal_Var.site.geno.samples'
-The output format is like:
-GeneName	Chr	Pos_7.0	Method_Genotyping	Ref_geno	Alt_geno	Alt_Allele_Func	HuangHuaZhan	No. samples with different alleles	QTNlib samples with different alleles
-tms5	Chr2	6397412	GATK4	C	A	thermosensitive male sterility	0|0	1	A474
-GW2	Chr2	8117283	GATK4	CA	C	larger grain width and weight	0|0	3	A104|A214|A450
+**Step2: Find rice accessions in our QTNlib with different allele of each causative site.**  
+
+`perl step2_samples_with_diff_CausalVar.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno>`   
+Output: 'SamplePrefix.RiceNavi_Causal_Var.site.geno.samples'  
+The output format is like:  
+
+| GeneName | Chr  | Pos_7.0 | Method_Genotyping | Ref_geno | Alt_geno | Alt_Allele_Func                | HuangHuaZhan | No. samples with different alleles | QTNlib samples with different alleles |
+| -------- | ---- | ------- | ----------------- | -------- | -------- | ------------------------------ | ------------ | ---------------------------------- | ------------------------------------- |
+| tms5     | Chr2 | 6397412 | GATK4             | C        | A        | thermosensitive male sterility | 0\|0         | 1                                  | A474                                  |
+| GW2      | Chr2 | 8117283 | GATK4             | CA       | C        | larger grain width and weight  | 0\|0         | 3                                  | A104\|A214\|A450                      |
 
 
 
-**Step3:  Users pick QTNs to find candidate rice donor lines in QTNlib based on specific rice breeding purpose.**
-`perl step3_pick_QTN.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno.samples> <Selected_QTNlist>`
 
-[Selected_QTNlist]
-#for example:
-Badh2	Chr8	20382858
-TAC1	Chr9	20731844
-OsSOC1	Chr3	1270327
 
-The candidate accession IDs will be provided in the file 'Candidate.Improvement_samples'
-The samples which harbor the selected alternative alleles are listed below.
-No. candidate accessions: 10
-A138	TRJ
-A202	TRJ
-A210	BAS
-A336	BAS
-A389	TEJ
-A396	TRJ
-A397	TRJ
-A437	TRJ
-A482	BAS
-A98	BAS
+**Step3:  Users pick QTNs to find candidate rice donor lines in QTNlib based on specific rice breeding purpose.**  
+`perl step3_pick_QTN.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno.samples> <Selected_QTNlist>`  
+
+[Selected_QTNlist]  
+#for example:  
+
+| Badh2  | Chr8 | 20382858 |
+| ------ | ---- | -------- |
+| TAC1   | Chr9 | 20731844 |
+| OsSOC1 | Chr3 | 1270327  |
+
+The candidate accession IDs will be provided in the file 'Candidate.Improvement_samples'  
+The samples which harbor the selected alternative alleles are listed below.  
+No. candidate accessions: 10   
+
+| A138 | TRJ  |
+| ---- | ---- |
+| A202 | TRJ  |
+| A210 | BAS  |
+| A336 | BAS  |
+| A389 | TEJ  |
+| A396 | TRJ  |
+| A397 | TRJ  |
+| A437 | TRJ  |
+| A482 | BAS  |
+| A98  | BAS  |
+
+
+
+
+
+---
 
 
 
@@ -76,38 +102,40 @@ The RiceNavi-Sim package is implemented taking advantage of the [PedigreeSim](ht
 Before running the script, edit the parameters in the config file 'RiceNavi-Sim.cfg'
 and file for target genes 'Selected_Genes.loci' based on needs.
 
-[RiceNavi-Sim.cfg]
+[RiceNavi-Sim.cfg]  
 #for example: setting the population size for each generation
 
-BC1F1 = 100
-BC2F1 = 200
-BC3F1 = 300
-BCnF1 = 300
+BC1F1 = 100  
+BC2F1 = 200  
+BC3F1 = 300  
+BCnF1 = 300  
 
-#set the number of Backcrossing times
+#set the number of Backcrossing times  
 
-BC_times = 5
+BC_times = 5  
 
-#set the number of Simulation times
+#set the number of Simulation times  
 
-Sim_times = 100
+Sim_times = 100  
 
-[Selected_Genes.loci]
-#for example:
-LOC_Os08g07740	DTH8	Chr8	4333717	4335434
+[Selected_Genes.loci]  
+#for example:  
+LOC_Os08g07740	DTH8	Chr8	4333717	4335434  
 
-Script Usage:
-`perl RiceNavi-Sim_run_scripts.pl <RiceNavi-Sim.cfg> <Selected_Genes.loci>`
+Script Usage:  
+`perl RiceNavi-Sim_run_scripts.pl <RiceNavi-Sim.cfg> <Selected_Genes.loci>  `  
 
-The simulation outputs will be stored in 'simulation_dir'
-After simulation process is finished, `cd` into directory 'simulation_dir', and run script stat_likelihood.pl
+The simulation outputs will be stored in 'simulation_dir'  
+After simulation process is finished, `cd` into directory 'simulation_dir', and run script stat_likelihood.pl   
 
-`perl Stat_Sim_likelihood.pl <Target_size> <backcrossing_times>`
-The <Target_size> is the size (Mb) of genomic region that covers the selected gene
-if <Target_size> is set to 2, 
-the output files are: stat_simulation.2M & stat_simulation.2M.Likelihood
+`perl Stat_Sim_likelihood.pl <Target_size> <backcrossing_times>`   
+The <Target_size> is the size (Mb) of genomic region that covers the selected gene  
+if <Target_size> is set to 2,   
+the output files are: stat_simulation.2M & stat_simulation.2M.Likelihood  
 
 
+
+---
 
 ### RiceNavi-SampleSelect
 
@@ -117,31 +145,41 @@ heterozygous genotypes on target genes are further ranked according to the whole
 Usage: 
 `perl RiceNavi-SampleSelect.pl <Genotyping Matrix> <Genelist> <OutPrefix> > OutFile`
 
-Input format:
-(1) <Genotyping Matrix> 
+Input format:  
+(1) \<Genotyping Matrix> 
 
 The format is as follows:
-    Indiv Sample1 Sample2  ..  SampleN
-Chr1_win1   0        1     ..    1
-Chr1_win2   1        0     ..    0
-..
-Chr12_winN  0        1     ..    1
 
-(2) <Genelist>
-The locations (Rice MSUv7) of genes selected by Users.
-The format is like:
-LOC_Os08g07740	DTH8	Chr8	4333717	4335434
-LOC_Os05g01710	xa5	Chr5	437010	443270
+| marker  | BC1F1_1 | BC1F1_2 | BC1F1_3 | BC1F1_4 | BC1F1_5 |
+| ------- | ------- | ------- | ------- | ------- | ------- |
+| 1_0     | 0       | 1       | 0       | 0       | 1       |
+| 1_0.6   | 0       | 1       | 0       | 0       | 1       |
+| 1_0.9   | 0       | 1       | 0       | 0       | 1       |
+| …       | …       | …       | …       | …       | …       |
+| 12_27   | 0       | 0       | 0       | 1       | 1       |
+| 12_27.3 | 0       | 0       | 0       | 1       | 1       |
+| 12_27.6 | 0       | 0       | 0       | 1       | 1       |
 
-Output: Summarized genotype characteristics for each individual. The individuals are ordered based on Heterozygosity Percentage.
-        including  (1) No. genes targeted by heterozygous regions
-                   (2) No. recombination breakpoints
-                   (3) No. heterozygous genomic blocks
-                   (4) Heterozygosity Percentage across the whole genome
-                   (5) Homozygous (Donor genotype) percentage across the whole genome
-                   (6) Size of the heterozygous regions covering the targeted genes
-                   (7) Whether (Y or N) all the selected genes are covered by heterozygous regions
-The output will be like:
+(2) \<Genelist>  
+The locations (Rice MSUv7) of genes selected by Users.  
+The format is like:  
+
+| LOC_Os08g07740 | DTH8 | chr8 | 4333717 | 4335434 |
+| -------------- | ---- | ---- | ------- | ------- |
+| LOC_Os05g01710 | xa5  | Chr5 | 437010  | 443270  |
+
+
+
+Output: Summarized genotype characteristics for each individual. The individuals are ordered based on Heterozygosity Percentage.  
+        including  (1) No. genes targeted by heterozygous regions  
+                   (2) No. recombination breakpoints  
+                   (3) No. heterozygous genomic blocks  
+                   (4) Heterozygosity Percentage across the whole genome  
+                   (5) Homozygous (Donor genotype) percentage across the whole genome  
+                   (6) Size of the heterozygous regions covering the targeted genes  
+                   (7) Whether (Y or N) all the selected genes are covered by heterozygous regions   
+
+The output will  be like:
 
 |   Indiv   | Selected_genes | Breakpoint_Count | Het_regions_count | Heterozygosity_Percent | Homo_donor_Pct |    DTH8(8\|4.33)    |  Ghd7.1(7\|29.62)  | Y_or_N |
 | :-------: | :------------: | :--------------: | :---------------: | :--------------------: | :------------: | :-----------------: | :----------------: | :----: |
@@ -155,6 +193,4 @@ The output will be like:
 | BC1F1_77  |     2 \| 2     |        20        |        16         |        0.483105        |       0        |  (28.2)8_0\|8_28.2  | (15.9)7_14.1\|7_30 |   Y    |
 | BC1F1_69  |     2 \| 2     |        17        |        13         |        0.485845        |       0        | (22.8)8_3.6\|8_26.4 | (27.6)7_2.4\|7_30  |   Y    |
 | BC1F1_149 |     2 \| 2     |        19        |        15         |        0.485845        |       0        |  (3.9)8_0.9\|8_4.8  | (2.4)7_27.6\|7_30  |   Y    |
-
-
 
