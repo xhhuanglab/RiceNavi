@@ -12,9 +12,13 @@ Advances in functional studies and extensive allelic variation in agronomically 
 
 * [RiceNavi-Sim](#RiceNavi-Sim)
 
-* [RiceNavi-SampleSelect](#RiceNavi-SampleSelect)
+* [RiceNavi-SampleSelect](#RiceNavi-SampleSelect)   
 
+  
 
+For ease of use, we also constructed a web-based version of RiceNavi:   
+
+http://www.xhhuanglab.cn/tool/RiceNavi.html (supporting most browsers including Chrome, Firefox, and Safari, but not IE).   
 
 ---
 
