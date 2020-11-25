@@ -30,35 +30,17 @@ while(<CFG>){
 }
 
 
-mkdir $prefix;
-
-open VAR, $var_sites;
-open GATK3, ">$prefix/$var_sites.GATK3.intervals";
-open GATK4, ">$prefix/$var_sites.GATK4.intervals";
-open DEPTHCALL, ">$prefix/$var_sites.depthcall.bed";
-
-
-
 my $GATK4_gvcf_output = $prefix.'/'.$prefix.'.1_GATK4.gvcf';
 my $GATK3_vcf_output = $prefix.'/'.$prefix.'.2_GAKT3.vcf';
 my $depthcall_outfile = $prefix.'/'.$prefix.'.3_sambamba.depth';
 
-
-while(<VAR>){
-  chomp;	
-  my @tmp = split/\t/;
-  next if /Method/;
-  print GATK3 "$tmp[0]\:$tmp[1]\-$tmp[1]\n" if /GATK3/;
-  print GATK4 "$tmp[0]\:$tmp[1]\-$tmp[1]\n" if /GATK4/;
-  print DEPTHCALL "$1\t$2\n" if /(.+?)\-(.+)\tdepthcall/;
-}
-close VAR;
+mkdir $prefix;
 
 ############################################
 ## SNP & INDEL calling by GATK4 and GATK3 ##
 ############################################
 
-#system(qq(samtools index $sample_bam));
+system(qq(samtools index $sample_bam)) if (! -f "$sample_bam.bai");
 
 system(qq(java -jar $GATK4 HaplotypeCaller -R $Ref_genome --emit-ref-confidence GVCF -I $sample_bam -L $var_sites.GATK4.intervals -O $GATK4_gvcf_output));
 

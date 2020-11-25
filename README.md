@@ -29,9 +29,9 @@ http://www.xhhuanglab.cn/tool/RiceNavi.html (supporting most browsers including 
 Taking adavantage of the integrated QTN map, the RiceNavi-QTNpick package can take mapping BAM file of user's rice sample (receptor rice sample) as input, and call the genotype of the sample at the causative sites. The genotype of  the user's sample is compared to those of the samples in the QTN library, after which the QTN library samples harboring the alterative allele for each QTN could be provided. Users can pick the beneficial QTN(s). After picking the QTN(s), the donor sample list will be provided.
 
 Before running RiceNavi-QTNpick package, the BAM file of the rice sample is need to be genenerated by User.
-Please use the rice genome MSU v7 as the reference. We also provide a script `pre_mapping_to_bam_pipeline.pl` (in the RiceNavi-QTNpick directory) for users to generate realigned.bam with Paired-end fastq files as  inputs. 
+We here provide a script `pre_mapping_to_bam_pipeline.pl` (in the RiceNavi-QTNpick directory) for users to generate realigned.bam with Paired-end fastq files as  inputs.  Please use the rice genome [MSU v7](http://rice.plantbiology.msu.edu/pub/data/Eukaryotic_Projects/o_sativa/annotation_dbs/pseudomolecules/version_7.0/all.dir/) as the reference. 
 
-Generate 'realigned.bam' with User sample's paired-end fastq files as  inputs. 
+Generate `realigned.bam` with User sample's paired-end fastq files as  inputs. 
 
 CMD: `perl pre_mapping_to_bam_pipeline.pl RiceNavi-QTNpick.cfg fq1 fq2 SamplePrefix `   
 
@@ -45,13 +45,13 @@ After BAM file is available, further steps could be performed.
 
 CMD: `perl step1_Indiv_CausalVar_genotyping.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`   
 
-Then the combined genotype file is generated: SamplePrefix.RiceNavi_Causal_Var.site.geno
+Then the genotype file (`SamplePrefix.RiceNavi_Causal_Var.site.geno`) of the User's sample will be generated at the folder `SamplePrefix`
 
 
 
 **Step2: Find rice accessions in our QTNlib with different allele of each causative site.**  
 
-`perl step2_samples_with_diff_CausalVar.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno>`   
+CMD:`perl step2_samples_with_diff_CausalVar.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno>`   
 Output: 'SamplePrefix.RiceNavi_Causal_Var.site.geno.samples'  
 The output format is like:  
 
@@ -67,31 +67,32 @@ The output format is like:
 **Step3:  Users pick QTNs to find candidate rice donor lines in QTNlib based on specific rice breeding purpose.**  
 `perl step3_pick_QTN.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno.samples> <Selected_QTNlist>`  
 
-[Selected_QTNlist]  
 #for example:  
 
-| Badh2  | Chr8 | 20382858 |
-| ------ | ---- | -------- |
-| TAC1   | Chr9 | 20731844 |
-| OsSOC1 | Chr3 | 1270327  |
+[Selected_QTNlist]  
 
-The candidate accession IDs will be provided in the file 'Candidate.Improvement_samples'  
+| #GeneID | Chrom | Site     |
+| ------- | ----- | -------- |
+| Badh2   | Chr8  | 20382858 |
+| TAC1    | Chr9  | 20731844 |
+| OsSOC1  | Chr3  | 1270327  |
+
+The candidate accession IDs will be provided in the file `Candidate.Improvement_samples`  
 The samples which harbor the selected alternative alleles are listed below.  
 No. candidate accessions: 10   
 
-| A138 | TRJ  |
-| ---- | ---- |
-| A202 | TRJ  |
-| A210 | BAS  |
-| A336 | BAS  |
-| A389 | TEJ  |
-| A396 | TRJ  |
-| A397 | TRJ  |
-| A437 | TRJ  |
-| A482 | BAS  |
-| A98  | BAS  |
-
-
+| SampleID | Type |
+| -------- | ---- |
+| A138     | TRJ  |
+| A202     | TRJ  |
+| A210     | BAS  |
+| A336     | BAS  |
+| A389     | TEJ  |
+| A396     | TRJ  |
+| A397     | TRJ  |
+| A437     | TRJ  |
+| A482     | BAS  |
+| A98      | BAS  |
 
 
 
@@ -101,10 +102,10 @@ No. candidate accessions: 10
 
 ### RiceNavi-Sim 
 
-The RiceNavi-Sim package is implemented taking advantage of the [PedigreeSim](https://www.wur.nl/en/show/Software-PedigreeSim.htm) software. The PedigreeSim software can simulate the genotype of the offspring if the genotypes of the parents and the genetic map are given. With the constructed rice genetic map, the genotype matrix of different generations (F1 to BCnF1) for breeding population can be simulated by RiceNavi-Sim. During each generation, RiceNavi-Sim adopted Rice-SampleSelect to select the best candidate as parental lines for next generation. The simulation time can be set by users. After all simulations are performed, the likelihood can be estimated. In each generation, the likelihood was calculated based on the percentage of simulations that have the ‘ideal’ individuals with only heterozygous genotypes in the regions covering selected gene(s).
+The RiceNavi-Sim package is implemented taking advantage of the [PedigreeSim](https://www.wur.nl/en/show/Software-PedigreeSim.htm) software. The PedigreeSim software can simulate the genotype of the offspring if the genotypes of the parents and the genetic map are given. With the constructed rice genetic map, the genotype matrix of different generations (F1 to BCnF1) for breeding population can be simulated by RiceNavi-Sim. During each generation, RiceNavi-Sim adopted `Rice-SampleSelect` package to select the best candidate as parental lines for next generation. The simulation time can be set by users. After all simulations are performed, the likelihood can be estimated. In each generation, the likelihood was calculated based on the percentage of simulations that have the ‘ideal’ individuals with only heterozygous genotypes in the regions covering selected gene(s).
 
-Before running the script, edit the parameters in the config file 'RiceNavi-Sim.cfg'
-and file for target genes 'Selected_Genes.loci' based on needs.
+Before running the script, edit the parameters in the config file `RiceNavi-Sim.cfg`
+and file for target genes `Selected_Genes.loci` based on needs.
 
 [RiceNavi-Sim.cfg]  
 #for example: setting the population size for each generation
@@ -130,12 +131,11 @@ Script Usage:
 `perl RiceNavi-Sim_run_scripts.pl <RiceNavi-Sim.cfg> <Selected_Genes.loci>  `  
 
 The simulation outputs will be stored in 'simulation_dir'  
-After simulation process is finished, `cd` into directory 'simulation_dir', and run script stat_likelihood.pl   
+After simulation process is finished, `cd` into directory `simulation_dir`, and run script `stat_likelihood.pl`  .
 
-`perl Stat_Sim_likelihood.pl <Target_size> <backcrossing_times>`   
+CMD: `perl Stat_Sim_likelihood.pl <Target_size> <backcrossing_times>`   
 The <Target_size> is the size (Mb) of genomic region that covers the selected gene  
-if <Target_size> is set to 2,   
-the output files are: stat_simulation.2M & stat_simulation.2M.Likelihood  
+if <Target_size> is set to 2, the output files are: `stat_simulation.2M` & `stat_simulation.2M.Likelihood`  
 
 
 
@@ -143,8 +143,7 @@ the output files are: stat_simulation.2M & stat_simulation.2M.Likelihood
 
 ### RiceNavi-SampleSelect
 
-The Rice-SampleSelect package can select suitable genotypes to facilitate the breeding process. The input file for this package is a genotyping matrix, where each column represents samples, while each row is the binned genotype (e.g. 0.3 Mb per bin). The genotyping matrix is generated by our constructed genotyping pipeline [SEG-map](http://db.ncgr.ac.cn/SEG/) for skim genome sequencing.  The Rice-SampleSelect package can output the  summarized genotype characteristics for each individual of that population such as the number of recombination breakpoints, heterozygosity across the whole genome, the number of heterozygous genomic blocks, the size of the heterozygous regions covering the targeted genes, etc. The samples with
-heterozygous genotypes on target genes are further ranked according to the whole genome heterozygosity level for ease of selection.
+The Rice-SampleSelect package can select suitable genotypes to facilitate the breeding process. The input file for this package is a genotyping matrix, where each column represents samples, while each row is the binned genotype (e.g. 0.3 Mb per bin). The genotyping matrix is generated by the genotyping pipeline [SEG-map](http://db.ncgr.ac.cn/SEG/) for skim genome sequencing.  The Rice-SampleSelect package can output the  summarized genotype characteristics for each individual of that population, such as No. recombination breakpoints, heterozygosity across the whole genome, the No. heterozygous genomic blocks, the size of the heterozygous regions covering the targeted genes, and etc. The samples with heterozygous genotypes on target genes are ranked according to the whole genome heterozygosity level.
 
 Usage: 
 `perl RiceNavi-SampleSelect.pl <Genotyping Matrix> <Genelist> <OutPrefix> > OutFile`
@@ -164,13 +163,16 @@ The format is as follows:
 | 12_27.3 | 0       | 0       | 0       | 1       | 1       |
 | 12_27.6 | 0       | 0       | 0       | 1       | 1       |
 
+Note that the 1st column is the combination of chromosome ID and 
+
 (2) \<Genelist>  
 The locations (Rice MSUv7) of genes selected by Users.  
 The format is like:  
 
-| LOC_Os08g07740 | DTH8 | chr8 | 4333717 | 4335434 |
-| -------------- | ---- | ---- | ------- | ------- |
-| LOC_Os05g01710 | xa5  | Chr5 | 437010  | 443270  |
+| GeneID         | GeneName | Chrom | Start   | End     |
+| -------------- | -------- | ----- | ------- | ------- |
+| LOC_Os08g07740 | DTH8     | chr8  | 4333717 | 4335434 |
+| LOC_Os05g01710 | xa5      | Chr5  | 437010  | 443270  |
 
 
 
