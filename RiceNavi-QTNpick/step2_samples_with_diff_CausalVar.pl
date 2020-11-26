@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+use FindBin;
+
 
 ################################################################################################
 # Usage: perl step3_samples_with_diff_CausalVar.pl <Sample.RiceNavi_Causal_Var.site.geno>
@@ -6,7 +8,8 @@
 
 
 my $sample_geno = shift or die "Please Input <Sample.RiceNavi_Causal_Var.site.geno>";
-my $popdb_SNP = "QTNpickLib/RiceNavi_QTNLib.genomatrix"; 
+my $popdb_SNP = $FindBin::Bin."/QTNpickLib/RiceNavi_QTNLib.genomatrix"; 
+`dos2unix $popdb_SNP`;
 
 my %samples;
 my %num2sample;
@@ -21,19 +24,19 @@ open OUT, ">$sample_geno.samples";
 
 my $head = <POPSNP>; chomp $head;
 my @head = split/\t/,$head;
-for my $i (5..$#head){
+for my $i (7..$#head){
   $num2sample{$i} = $head[$i];
   $samples{$head[$i]}++;
 }
 while(<POPSNP>){
   chomp;
   my @tmp = split/\t/;
-  my ($genename,$chrom,$snp_posi,$method,$refbase,$altbases) = @tmp[0,1,2,3,4,5];
+  my ($genename,$chrom,$snp_posi,$method,$refbase,$altbases) = @tmp[6,0,1,2,3,4];
   my $snploci = $chrom."\t".$snp_posi;
   $posi2genename{$chrom."\t".$snp_posi} = $genename;
   ($refbase{$snploci},$altbase{$snploci}) = ($refbase,$altbases);
   $snp2method{$snploci} = $method; 
-  for my $i (6..$#tmp){
+  for my $i (7..$#tmp){
   	 next if $tmp[$i] eq '.|.';
      $samplegeno{$num2sample{$i}}{$snploci} = $tmp[$i];	
   }	
@@ -48,7 +51,7 @@ while(<GENO>){
   chomp;
   next if /^\#/;
   my @tmp = split/\t/;
-  my ($chrom,$site,$method,$refbaes,$altbase,$altfunc,$samplebase) = @tmp;
+  my ($chrom,$site,$method,$altfunc,$genename,$samplebase) = @tmp;
   my $chrom_site = "$chrom\t$site";
   my $candidate_samples = '';
   my $count_samples = 0;

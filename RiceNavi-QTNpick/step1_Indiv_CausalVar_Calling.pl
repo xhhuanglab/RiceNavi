@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-
+use FindBin;
 
 my $cfg;
 my $sample_bam;
@@ -30,6 +30,13 @@ while(<CFG>){
 }
 
 
+my $script_dir = $FindBin::Bin;
+my $non_Nip_QTG_ref_file = $script_dir."/".$non_Nip_QTG_ref;
+my $var_sites_file = $script_dir."/".$var_sites;
+my $gatk4_intervals = $script_dir."/".$var_sites.".GATK4.intervals";
+my $gatk3_intervals = $script_dir."/".$var_sites.".GATK3.intervals";
+my $sambamba_bed = $script_dir."/".$var_sites.".depthcall.bed";
+
 my $GATK4_gvcf_output = $prefix.'/'.$prefix.'.1_GATK4.gvcf';
 my $GATK3_vcf_output = $prefix.'/'.$prefix.'.2_GAKT3.vcf';
 my $depthcall_outfile = $prefix.'/'.$prefix.'.3_sambamba.depth';
@@ -40,17 +47,18 @@ mkdir $prefix;
 ## SNP & INDEL calling by GATK4 and GATK3 ##
 ############################################
 
+
 system(qq(samtools index $sample_bam)) if (! -f "$sample_bam.bai");
 
-system(qq(java -jar $GATK4 HaplotypeCaller -R $Ref_genome --emit-ref-confidence GVCF -I $sample_bam -L $var_sites.GATK4.intervals -O $GATK4_gvcf_output));
+system(qq(java -jar $GATK4 HaplotypeCaller -R $Ref_genome --emit-ref-confidence GVCF -I $sample_bam -L $gatk4_intervals -O $GATK4_gvcf_output));
 
-system(qq(java -jar $GATK3 -T UnifiedGenotyper -R $Ref_genome -I $sample_bam -o $GATK3_vcf_output -L $var_sites.GATK3.intervals -glm BOTH --output_mode EMIT_ALL_SITES));
+system(qq(java -jar $GATK3 -T UnifiedGenotyper -R $Ref_genome -I $sample_bam -o $GATK3_vcf_output -L $gatk3_intervals -glm BOTH --output_mode EMIT_ALL_SITES));
 
 
 #############################
 ## depthcalling by Sambamba #
 #############################
-system(qq($sambamba_soft depth region $sample_bam -L $var_sites.depthcall.bed -o $depthcall_outfile));
+system(qq($sambamba_soft depth region $sample_bam -L $sambamba_bed -o $depthcall_outfile));
 
 ###################################
 ## run Manta to detect large SVs ##
@@ -58,9 +66,9 @@ system(qq($sambamba_soft depth region $sample_bam -L $var_sites.depthcall.bed -o
 print "Start detecting SV by Manta..";
 mkdir "$prefix/$prefix.Manta";
 system(qq(configManta.py --bam $sample_bam --referenceFasta $Ref_genome --runDir $prefix/$prefix.Manta));
-system(qq(python $prefix/$prefix.Manta/runWorkflow.py));
+system(qq(python2 $prefix/$prefix.Manta/runWorkflow.py));
 system(qq(cp $prefix/$prefix.Manta/results/variants/candidateSV.vcf.gz $prefix/$prefix.4_manta.SV.gz));
-system(qq(gunzip $prefix/$prefix.4_manta.SV.gz));
+system(qq(gunzip -f $prefix/$prefix.4_manta.SV.gz));
 
 
 ######################################################################################################
@@ -68,11 +76,10 @@ system(qq(gunzip $prefix/$prefix.4_manta.SV.gz));
 ######################################################################################################
 
 
-my $non_Nip_QTG_ref_index = $1 if $non_Nip_QTG_ref =~ /(.+)\.fa/;
+my $non_Nip_QTG_ref_index = $1 if $non_Nip_QTG_ref_file =~ /(.+)\.fa/;
 mkdir "$prefix/$prefix.unaligned";
 system(qq($bam2fastq -o $prefix/$prefix.unaligned/$prefix\#.fq -f --unaligned --no-aligned --no-filter $sample_bam));
 
-system(qq(bowtie2-build $non_Nip_QTG_ref $non_Nip_QTG_ref_index));
 
 my $fq1 = "$prefix/$prefix.unaligned/$prefix\_1.fq"; my $fq2 = "$prefix/$prefix.unaligned/$prefix\_2.fq";
 
@@ -86,7 +93,7 @@ system(qq($samtools depth $prefix/$prefix.unaligned/$prefix.unaligned.sorted.bam
 my %nonnip_seq; my $tit;
 my %count_len;
 open COVERAGE, ">$prefix/$prefix.5_nonNip_QTG.coverage";
-open NONNIP, $non_Nip_QTG_ref or die;
+open NONNIP, $non_Nip_QTG_ref_file or die;
 while(<NONNIP>){
   chomp;
   if(/>(\S+)/){
@@ -111,13 +118,11 @@ foreach (sort keys%nonnip_seq){
 }
 
 
-### Remove intermediate files ###
-`rm -rf $prefix/$prefix.Manta`;
-`rm -rf $prefix/$prefix.unaligned`;
 
 
 
 
+#########################
 ### Combine Genotypes ###
 
 my $sample_out_geno = "$prefix/$prefix.RiceNavi_Causal_Var.site.geno";
@@ -179,7 +184,7 @@ while(<GATK3>){
   }
 }
 close GATK3;
-#print $gatk3_geno{"Chr4\t31751160"};
+
 
 
 my %sambamba_geno;
@@ -224,16 +229,17 @@ while(<NONQTG>){
 }
 close NONQTG;
 
-
-open SITES, $var_sites or die "RiceNavi_Causal_Var.sites is not available..";
+system(qq(dos2unix $var_sites_file));
+open SITES, $var_sites_file or die "RiceNavi_Causal_Var.sites is not available..";
 my $site_header = <SITES>; chomp $site_header;
 
-print OUT $site_header."\t".$prefix."\n";
+print OUT "Chr\tPos_7.0\tMethod_Genotyping\tAlt_Allele_Func\tGeneName\t$prefix\n";
 while(<SITES>){
   chomp;
   my $sample_geno;
   my @tmp = split/\t/;
   my $interval = $tmp[0]."\t".$tmp[1];
+  my $site_info = $tmp[0]."\t".$tmp[1]."\t".$tmp[2]."\t".$tmp[5]."\t".$tmp[6];
   if(/nonNip/){
     $sample_geno = $nonNip_geno{$tmp[1]} || '0|0';
   }
@@ -280,9 +286,14 @@ while(<SITES>){
     }
 
   }
-  print OUT "$_\t$sample_geno\n";
+  print OUT "$site_info\t$sample_geno\n";
 }
 close SITES;
 
+
+#################################
+### Remove intermediate files ###
+`rm -rf $prefix/$prefix.Manta`;
+`rm -rf $prefix/$prefix.unaligned`;
   	
 print localtime() ." Job Causative variants calling for $prefix finished!\n";

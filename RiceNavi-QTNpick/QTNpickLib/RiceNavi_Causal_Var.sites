@@ -1,323 +1,320 @@
-Chr	Pos_7.0	Method_Genotyping	Ref_geno	Alt_geno	Alt_Allele_Func
-Chr1	5271719	GATK4	TTCAGCCATGGG	T	increasing grain number
-Chr1	5270928	GATK3	A	C	increasing grain number
-Chr1	5568692	GATK4	T	C	fertility restoration
-Chr1	18722895	GATK4	C	T	hybrid incompatibility
-Chr1	22376434	GATK4	C	T	Hybrid male sterility
-Chr1	22381235	GATK4	T	G	Hybrid male sterility
-Chr1	31558876	GATK4	G	GCAAAGTTGCCAT	increasing grain number
-Chr1	33695501	GATK4	A	T	interspecific hybrid weakness
-Chr1	35558484	GATK4	C	A	increasing grain number
-Chr1	35555900	GATK3	T	C	decreasing tiller number
-Chr2	6397412	GATK4	C	A	thermosensitive male sterility
-Chr2	8117283	GATK4	CA	C	larger grain width and weight
-Chr2	9997737	GATK4	C	T	fertility restoration
-Chr2	28865723	GATK4	G	T	larger grain size and higher nitrogen use efficiency
-Chr3	4353347	GATK4	A	C	increasing grain length
-Chr3	4352886	GATK4	T	A	increasing drought tolerance
-Chr3	6053303	GATK4	C	A	increasing grain length
-Chr3	16733441	GATK4	G	T	increasing grain length
-Chr3	17340602	GATK4	T	C	deceasing grain length
-Chr3	25046741	GATK4	G	T	increasing grain length
-Chr3	28093193	GATK4	G	A	decreasing generation of stale flavor
-Chr3	35390422	GATK4	C	T	increasing grain length
-Chr3	36150781	GATK4	G	A	increaing grain number and plant height
-Chr4	14804882	GATK4	C	T	hybrid incompatibility
-Chr4	19403332	GATK4	T	C	hybrid incompatibility
-Chr4	31212801	GATK4	A	G	decreasing leaf width and yield
-Chr5	2604473	GATK4	G	A	increasing setting rate
-Chr5	3444274	GATK4	C	T	decreasing grain width
-Chr5	3444712	GATK4	G	A	decreasing grain width
-Chr5	5365256	GATK4	G	A	increasing grain width
-Chr6	1468526	GATK4	T	TCTCTCACTCTCA,TCTCTCA,TCTCTCACTCTCACTCTCA	decreasing grain size
-Chr6	4201227	GATK4	C	T	hybrid incompatibility
-Chr6	5745402	GATK4	C	CCAGTGATCGAAAT	hybrid incompatibility
-Chr6	5758523	GATK4	AGCCGCGTAGCT	A	hybrid incompatibility
-Chr6	5759744	GATK3	A	ATTAAATTT	hybrid compatibility
-Chr6	5761369	GATK4	TACAACGATCC	T	hybrid compatibility
-Chr6	25093552	GATK4	CG	C	increasing grain weight
-Chr6	25093498	GATK4	CCGCT	C	increasing grain weight
-Chr6	26592357	GATK4	C	T	increasing grain weight and plant height
-Chr7	15787003	GATK4	G	T	hybrid compatibility
-Chr7	19103249	GATK3	AGTGGAAGGC	A	increasing grain size
-Chr7	24669233	GATK4	CTATCACTTTCT	C	increasing grain length
-Chr7	24714487	GATK4	A	C	increasing grain size
-Chr7	24714768	GATK4	G	T	increasing grain size
-Chr7	28306257	GATK4	C	CGCGTGCGCGTCCGTGCGT	loose panicle
-Chr8	26501540	GATK4	TGCG	T	increasing grain width
-Chr8	26505387	GATK4	C	A	increasing grain width
-Chr10	18835456	GATK4	T	A	fertility restoration
-Chr10	18952469	GATK3	C	CA	fertility restoration
-Chr10	19058375	GATK4	G	A	fertility restoration
-Chr10	19462395	GATK4	CGCG	C,CGCGGCG	decreasing grain-filling rate 
-Chr12	24647360	GATK4	TA	T	hybrid incompatibility
-Chr12	24669797	GATK3	GA	G	hybrid incompatibility
-Chr12	22054886	GATK4	C	G	photoperiod-sensitive male sterility
-Chr7	6693475	GATK4	G	T	photoperiod-sensitive male sterility
-Chr1	36355847	GATK4	G	A	delaying heading date under LD
-Chr1	40344413	GATK3	ACACCACCACACACACG	A	delaying heading date
-Chr1	40363925	GATK4	GAGGA	G	delaying heading date
-Chr2	23990288	GATK4	C	A	promoting heading date
-Chr2	23991055	GATK4	GTGCA	G	promoting heading date
-Chr2	30096330	GATK4	A	G	delaying heading date under LD
-Chr3	718648	GATK4	A	T	delaying heading date
-Chr3	1270327	GATK4	T	C	delaying heading date
-Chr3	31512460	GATK4	A	T	delaying heading date under LD
-Chr3	33002789	GATK4	G	A	promoting heading date under LD
-Chr3	33001571	GATK4	G	C	promoting heading date under LD
-Chr6	2235191	GATK4	A	G	delaying heading date
-Chr6	2928178	GATK4	G	A	delaying heading date
-Chr6	2942292	GATK4	C	A	promoting heading date under SD
-Chr6	2940130	GATK4	A	T	promoting heading date
-Chr6	9337101	GATK4	CG	C	promoting heading date under LD
-Chr6	9338220	GATK4	CAAGA	C	promoting heading date under LD
-Chr6	9338004	GATK4	CTT	C	promoting heading date under LD
-Chr6	9338243	GATK4	C	T	promoting heading date under LD
-Chr6	9337217	GATK4	AGAAG	A	promoting heading date under LD
-Chr6	9337239	GATK3	G	GGTTAT	promoting heading date under LD
-Chr7	9152558	GATK4	G	T	promoting heading date under LD
-Chr7	9154664	GATK4	C	A	promoting heading date under LD
-Chr7	9152488	GATK4	C	G	delaying heading date under LD
-Chr7	9154489	GATK4	G	C	promoting heading date under LD
-Chr7	29623435	GATK4	C	G	promoting heading date under LD
-Chr7	29627357	GATK4	AGAACGTTG	A	promoting heading date under LD
-Chr7	29628481	GATK4	T	C	promoting heading date under LD
-Chr7	29628484	GATK4	C	T	promoting heading date under LD
-Chr7	29628500	GATK4	T	C	promoting heading date under LD
-Chr7	29628529	GATK4	C	T	promoting heading date under LD
-Chr8	2388554	GATK4	T	C	delaying heading date
-Chr8	4332836	GATK3	A	ATGCCC	promoting heading date under LD
-Chr8	4334416	GATK4	CT	C	promoting heading date under LD
-Chr8	4333948	GATK3	G	GTGTAGAGCGCGACA	promoting heading date under LD
-Chr8	4334281	GATK4	GGCCTTCTC	G	promoting heading date under LD
-Chr8	4333871	GATK4	A	C	promoting heading date under LD
-Chr8	4334626	GATK3	CCCGCAGCCGCCGCCGCCAG	C	promoting heading date under LD
-Chr10	17076177	GATK4	T	C	delaying heading date
-Chr10	17077589	GATK4	C	T	delaying heading date
-Chr10	20872491	GATK4	A	AT	promoting heading date under LD
-Chr11	2454121	GATK4	C	T	delaying heading date
-Chr3	1666408	GATK3	A	ACTCGT	promoting heading date under LD
-Chr1	5244076	GATK4	G	T	larger tiller angle
-Chr1	29929465	GATK4	G	A	larger flag leaf angle
-Chr1	29930698	GATK4	C	T	larger flag leaf angle
-Chr1	38382846	GATK3	CCG	C	semi-dwarf
-Chr1	38383141	GATK3	TA	T	semi-dwarf
-Chr1	38385057	GATK4	A	G	higher plant height
-Chr1	38385064	GATK3	C	G	semi-dwarf
-Chr1	38381646	GATK4	GTT	GT,G	flooding adaptation
-Chr3	3845747	GATK4	G	T	larger flag leaf angle
-Chr3	28428731	GATK4	G	GTGTA	increasing lodging resistance
-Chr3	28513552	GATK4	C	A	higher plant height
-Chr3	29586015	GATK3	A	C	larger tiller angle
-Chr5	6658027	GATK4	C	T	increasing mesocotyl length
-Chr5	25515106	GATK4	G	C	higher plant height
-Chr6	27480778	GATK4	G	C	increasing lodging resistance
-Chr6	27484286	GATK4	C	T	increasing grain number
-Chr8	20930988	GATK4	C	T	smaller tiller angle
-Chr8	26887943	GATK4	C	T	decreasing tiller number and increasing grain number
-Chr8	27998573	GATK4	G	T	increasing plant height
-Chr9	14567436	GATK4	CCGG	C	decreasing tiller number
-Chr9	14568100	GATK4	T	C	increasing tiller number
-Chr9	17133004	GATK4	CCGCCGCCGCCACCGG	C	increasing root thickness and root length
-Chr9	20731844	GATK4	C	T	larger tiller angle
-Chr10	13723265	GATK4	A	G	increasing flag leaf angle
-Chr11	4433136	GATK3	G	GGCGGCGTCGTCGTCGTCT	delaying heading date and increasing plant height
-Chr11	27206054	GATK4	G	A	decreasing lateral roots number
-Chr1	25383832	GATK4	G	GA	light red seed coat
-Chr1	25382824	GATK4	G	T	light red seed coat
-Chr1	25383093	GATK4	A	C	red seed coat
-Chr1	36461792	GATK4	T	G	seed shattering
-Chr4	16734470	GATK4	GC	G	awn absent
-Chr4	16734743	GATK4	GGGC	GGGCGGC,G	awn present
-Chr4	25960486	GATK4	C	CTAT	awn present
-Chr4	25959585	GATK4	TC	T	shorter awn
-Chr5	990754	GATK4	T	A	glabrousness of rice leave glumes
-Chr6	5316554	GATK3	C	CTGCAGGCTCCG	colorless apiculus 
-Chr6	5315389	GATK4	C	G	slight pigmentation apiculus
-Chr6	5316049	GATK4	ATC	A	colorless apiculus 
-Chr6	5316058	GATK4	TACTGGAACAG	T	colorless apiculus 
-Chr6	27024794	GATK4	C	CCAAAGTTTAACAGTATAGT	increasing grain weight and plant height
-Chr7	6068071	GATK4	A	AACGCGAAAAGTCGG	red seed coat
-Chr7	6068017	GATK4	C	A	red seed coat
-Chr8	23999540	GATK3	G	GC,GCCGC	awn present
-Chr8	23999540	GATK3	G	GC,GCCGC	awn present
-Chr8	23999545	GATK4	G	GC	awn absent
-Chr8	23999487	GATK3	G	C	awn absent
-Chr8	23996438	GATK4	T	TAGGTGTGGCATGGCAAACAAAGTGTGGCCAACAAATTGTTGGCCAC,C	increasing grain length
-Chr1	38137703	GATK4	CTCTGTG	C	increasing seed protein content
-Chr5	3339934	GATK4	G	C	decreasing of chalkiness
-Chr6	1633040	GATK4	A	G	more L-asparagine
-Chr6	1767613	GATK4	G	A	decreasing amylose content
-Chr6	1765761	GATK4	T	G	decreasing amylose content
-Chr6	1767637	GATK4	A	G	decreasing amylose content
-Chr6	1768006	GATK4	A	C	increasing amylose content
-Chr6	1768998	GATK4	C	T	increasing amylose content
-Chr6	1767006	GATK4	G	GCCACGGGTTCCAGGGCCTCAAGC	glutinous rice
-Chr6	6752756	GATK4	A	G	increasing gelatinization temperature
-Chr6	6752888	GATK4	C	T	increasing gelatinization temperature
-Chr8	20382858	GATK4	AAAGAT	A	fragrance
-Chr8	20379883	GATK4	ATCG	A	fragrance
-Chr8	20385593	GATK4	T	TG	fragrance
-Chr10	13500469	GATK4	TTATTAGCGCATGATTAATTA	ATATTAGCGCATGATTAATTA,T	increasing protein content
-Chr1	30712558	GATK4	C	T	more 7-O-glucoside
-Chr2	35370598	GATK4	G	T	fewer trigonelline
-Chr3	35382034	GATK4	T	A	more tricin-lignan-glycosides
-Chr4	6566248	GATK3	G	GAC	more O-methylapigenin C-pentoside
-Chr7	2188914	GATK3	G	A	fewer feruloylserotonin
-Chr7	2188863	GATK3	C	G	fewer feruloylserotonin
-Chr7	2188150	GATK3	A	G	fewer feruloylserotonin
-Chr7	19060398	GATK4	C	T	more 5-O-glucoside
-Chr7	19061600	GATK4	AC	A	more 5-O-glucoside
-Chr7	19061609	GATK4	CCCGTGCTGTCGTTCAA	C	more 5-O-glucoside
-Chr9	21464008	GATK4	G	A	fewer N-feruloylputrescine
-Chr11	25467884	GATK3	A	C	fewer benzoyl tryptamine
-Chr11	25501655	GATK4	C	A	fewer cinnamoyl tryptamine
-Chr12	15970614	GATK4	C	T	fewer N',N''-p-coumaroyl feruloyl spermidine
-Chr12	15999119	GATK4	G	A	fewer N',N''-p-coumaroyl feruloyl spermidine
-Chr12	16005096	GATK4	C	T	fewer N',N''-p-coumaroyl feruloyl spermidine
-Chr12	15999070	GATK4	C	T	fewer N',N''-p-coumaroyl feruloyl spermidine
-Chr1	33144288	GATK4	A	C	increasing blast resistance
-Chr3	18437564	GATK4	T	C	increasing blast resistance
-Chr4	6942614	GATK4	T	C	increasing insect resistance
-Chr4	6956655	GATK4	C	T	increasing insect resistance
-Chr4	6968474	GATK4	A	G	increasing insect resistance
-Chr4	19835833	GATK4	TCGGCGGCGGCTTCTC	T	increasing blast resistance
-Chr4	31600315	GATK4	G	A	decreasing blast tolerance
-Chr4	31602115	GATK4	G	A	decreasing blast tolerance
-Chr4	31602847	GATK3	GAA	G	decreasing blast tolerance
-Chr4	31640498	GATK4	T	A	increasing blight resistance
-Chr4	31661301	GATK4	G	A,T	increasing blight resistance
-Chr4	31662295	GATK4	G	T	increasing blight resistance
-Chr5	437499	GATK4	T	A	increasing blight resistance
-Chr6	485049	GATK4	T	TCGCCGCCGCCGC	increasing brown planthopper resistance
-Chr6	10389573	GATK4	G	A	increasing blast resistance
-Chr6	10389270	GATK3	C	T	increasing blast resistance
-Chr6	10389855	GATK4	C	T	increasing blast resistance
-Chr6	10389734	GATK4	T	A	increasing blast resistance
-Chr6	13058843	GATK4	GCCCTGAAGA	G	increasing blast resistance
-Chr6	13055819	GATK4	A	G	increasing blast resistance
-Chr6	13057570	GATK3	A	G	increasing blast resistance
-Chr6	17161791	GATK4	C	T	increasing blast resistance
-Chr7	22119347	GATK4	ATGT	A,GTGT	increasing resistance to tungro spherical virus
-Chr7	22119350	GATK4	T	C,*	increasing resistance to tungro spherical virus
-Chr8	26909531	GATK4	T	C	increasing blast resistance
-Chr9	9672381	GATK3	A	G	increasing blast resistance
-Chr9	9779736	GATK4	A	G	increasing blast resistance
-Chr11	6543950	GATK4	C	G	increasing blast resistance
-Chr11	6544171	GATK3	G	A	increasing blast resistance
-Chr11	6554829	GATK4	T	A	increasing blast resistance
-Chr11	7659694	GATK4	T	C	increasing blast resistance
-Chr11	17985707	GATK4	A	T	increasing resistance to rice stripe virus
-Chr11	22800220	GATK4	A	AGAAAGGCTTTG	increasing blast resistance
-Chr11	25263992	GATK3	C	T	increasing blast resistance
-Chr11	28399471	GATK4	G	A	increasing blight resistance
-Chr11	28399720	GATK4	A	G	increasing blight resistance
-Chr12	10607554	GATK4	A	C	increasing blast resistance
-Chr12	10833368	GATK4	TAAAAA	T	increasing blast resistance
-Chr12	17302804	GATK4	G	A	decreasing blight resistance
-Chr12	17305353	GATK4	CT	CTT,C	decreasing blight resistance
-Chr1	11462725	GATK4	C	T	increasing salt tolerance
-Chr1	23663634	GATK4	GT	G	increasing herbicides tolerance
-Chr1	29568422	GATK4	GGCC	G	decreasing flooding tolerance 
-Chr1	36346000	GATK4	T	C	increasing drought tolerance
-Chr2	1663821	GATK4	G	A	decreasing Al tolerance
-Chr2	5410205	GATK4	T	C	preventing copper accumulation
-Chr2	10389082	GATK3	CATCAGGAACCAAAAGAATTAGAGACGAT	C	decreasing herbicide tolerance
-Chr2	24771726	GATK4	T	A	decreasing chilling tolerance
-Chr2	25190881	GATK4	C	G	preventing cd accumulation
-Chr3	220180	GATK4	AGGCGGTGGCGGTGGCGGT	A	decreasing low-temperature germinability ability
-Chr3	846037	GATK4	T	A	cadmium accumulation
-Chr3	11326677	GATK4	G	A	decreasing cold tolerance
-Chr4	2032882	GATK4	C	G	increasing chilling tolerance
-Chr4	23886659	GATK4	G	GT	increasing boron-toxicity tolerance
-Chr4	30315214	GATK4	T	A,G	decreasing chilling tolerance
-Chr4	30315214	GATK4	T	A,G	decreasing chilling tolerance
-Chr4	30726195	GATK4	T	C	increasing root sodium content
-Chr4	33304910	GATK4	A	G	decreasing root length and weight
-Chr6	29539670	GATK4	T	C	lower potassium use efficiency
-Chr6	29540384	GATK4	GC	G	lower potassium use efficiency
-Chr7	7409315	GATK4	C	T	high cadmium accumulation
-Chr7	7407917	GATK4	T	G	high cadmium accumulation
-Chr7	8878858	GATK4	AG	A	high cadmium accumulation
-Chr7	8879641	GATK4	A	G	high cadmium accumulation
-Chr7	22930113	GATK4	T	C	increasing resistance to tungro spherical virus
-Chr8	86089	GATK4	T	C	decreasing molybdenum accumulation
-Chr9	12251074	GATK4	A	AAT	increasing anaerobic germination tolerance
-Chr9	18122850	GATK4	C	T	decreasing chilling tolerance
-Chr10	4665777	GATK4	C	G	decreasing UV-B tolerance
-Chr10	4666493	GATK4	C	T	increasing UV-B tolerance
-Chr10	16705740	GATK4	T	TA	increasing drought tolerance
-Chr10	19330694	GATK4	G	A	dereasing chilling tolerance
-Chr11	16984309	GATK4	A	G	decreasing chilling tolerance
-Chr12	14233796	GATK4	C	T	increasing lateral roots number
-Chr1	178766	GATK4	G	A	higher nitrogen use efficiency
-Chr1	14452591	GATK4	G	C,T	increasing regeneration ablility
-Chr1	14452823	GATK4	T	G	increasing regeneration ablility
-Chr1	33453244	GATK4	C	T	more MeOH-Jasmonates
-Chr2	31768358	GATK4	A	G	more MeOH-Jasmonates
-Chr2	32514337	GATK4	A	T	higher nitrogen use efficiency
-Chr3	6894836	GATK4	CT	C	callus browning
-Chr3	21067004	GATK4	C	T	increasing salt tolerance
-Chr4	31751160	GATK3	G	GTGCTCGTCATCGAGGGGA	grains turns brown in phenol solution
-Chr4	31751160	GATK3	G	GTGCTCGTCATCGAGGGGA	grains turns brown in phenol solution
-Chr7	23797131	GATK3	A	C	decreasing sprouting
-Chr7	23796771	GATK3	GC	G	increasing sprouting
-Chr7	23797130	GATK3	G	T	increasing sprouting
-Chr8	7573789	GATK4	G	GAGAAGA,GAGA	high cadmium accumulation
-Chr8	7573877	GATK4	G	GGGCGGT	higher nitrogen use efficiency
-Chr10	21759092	GATK4	G	A	higher nitrogen use efficiency
-Chr12	26956807	GATK4	G	C	increasing tolerance to nutrition
-Chr2	2974723	Manta	A	<DEL>	decreasing yield
-Chr5	29455208	Manta	AATTTTGTATGGGTACTAGCCATGCAATTGTGCGGATCACCCGGCTAGTTCGACGAATTCAAGCGTTTTTTGGGTTGCAGCGTTTGGAAGGAGGCCCAAATTAAAGTGGTGATCGAAATTGTCAAGTGCTTGAGTAGATAGAGATTTTGTTTGGTTGGCACTACCGAAGCATGCATTGTTGGAGTGGGATGCCATAGAGCTGCGATCAAGATCCGACGGCTCCCAATGGCTCTGGTGACATGTCTCCTTGACACTTTCCAAAAACGGACAATTGGTCGGTTGATGTTGGGTTCCTTATTTGTACTACTCCAGAAGTATATAAAAAGCGGAAGTTCCCAATGCAACAAGAGGAAGACGCCATTGGAGTCCAATTAACTTGAATAATGGCGCGTCGTCGTCTTGTCCTGCTGCTTCTCATCATTGGTACGTTATTATACTCATGGAGTAGGATGGTTAATTTGTTGATTTGCAGTTAGCGGAGGAGTAATTAATTAATTATGTTATTAATCTTGTGTTGGCATGGCAGCCGCGGCGGGTGCGGCGGCGTTTGGGATCCGACGAGATGCGCCCAAGGCATACTGCTTCTACGGCATTGAGTGGACGGGAGTGCCTTACTTGCCGGGCACCGCCGCCGCCATTTATATCGGCAACACCAACTCCTGCATCGCCGGCTACCACTCGCCGCCGGACACGGCCACCTCCTACCGGTTCTGCATCCCCTCCTGGGTGGCCTTCACCGCCAACGCCACCACCCTCTGCGGCCAACCCGCCGTCGACCACTCCGCCGCCATCTCCGGCTTCAAGCGACTCATCGGCCTACAGCCGGGAGATCCTCACGCCAAGAGGGTGGCGCAGATTGCGCCCTACAAGCTGGGGGAAAAGATCGGGAGATGCAGCATCCAGGTCCAACTGGACGATGGCGCCAAGTGCCGTGTGGAGG	A	decreasing plant height and grain number
-Chr6	5759611	Manta	TCGCTCCTACGAATCCTGCCCCTGAGTAACAATGACTGACTTTTAATTTGTTTGCAGCTAGGGTGGGGATCGAGATGGTGATCTTGGAGCAGCCACAGCTGCTCCTTCTTCTTCTTCTTCTTGTAGCAGCTGCAGCTGCAA	TTAAT	hybrid compatibility
-Chr7	7545012	Manta	TTTCAGGTTACAAG	T	increasing grain length
-Chr8	537049	Manta	A	<DUP:TANDEM>	fertility restoration
-Chr8	25282468	Manta	G	<DUP:TANDEM>	increasing grain number and lodging resistance
-Chr3	1257892	Manta	TGGGACAAATCCTGAGAGTTAAAAGTTGTTATATTTTAA	TAG	promoting heading date
-Chr1	38382761	Manta	CCGAGCACGGCGTCGACGCCGCTCTGGCGCGCGCCGCGCTCGACGGCGCCAGCGACTTCTTCCGCCTCCCGCTCGCCGAGAAGCGCCGCGCGCGCCGCGTCCCGGGCACCGTGTCCGGCTACACCAGCGCCCACGCCGACCGCTTCGCCTCCAAGCTCCCATGGAAGGAGACCCTCTCCTTCGGCTTCCACGACCGCGCCGCCGCCCCCGTCGTCGCCGACTACTTCTCCAGCACCCTCGGCCCCGACTTCGCGCCAATGGGGTAATTAAAACGATGGTGGACGACATTGCATTTCAAATTCAAAACAAATTCAAAACACACCGACCGAGATTATGCTGAATTCAAACGCGTTTGTGCGCGCAGGAGGGTGTACCAGAAGTACT	CA	semi-dwarf
-Chr9	16415007	Manta	TTTTCATGCTTCAAATCCCTGTACAGCTGCTTCAAGATCCCTTCATGCTTCAAGTCCCAGTGCAACTGCTCTAGCCCCAATTGCTGCACTTGCACCCTTCCAAGCTGTAGCTGCAAGGGCTGTGCCTGTCCAAGCTGTGGATGCAACGGCTGTGGCTGTCCAAGCTGCGGATGCAACGGTTGTGGCTGTCCAAGCTGCGGTTGCAACGGCTGTGGCCTTCCAAGCTGCGGTTGCAACGGCTGCGGCTCGTGCTCTTGCGCCCAATGCAAACCCGATTGTGGCTCGTGCTCTACCAATTGCTGTAGCTGCAAGCCAAGCTGCAACGGCTGCTGCGGCGAGCAGTGCTGCCGCTGCGCGGACTGCTTCTCCTGCTCGTGCCCTCGTTGCTCCAGCTGCTTCAACATCTTCAAATGCTCCTGCGCTGGCTGCTGCTCGAGCCTGTGCAAGTGCCCCTGCACGACGCAGTGCTTCAGCTGCCAGTCGTCATGCTGCAAGCGGCAGCCTTCGTGCTGCAAGTGCCAGTCGTCTTGCTGCGAGGGGCAGCCTTCCTGCTGCGAGGGACACTGCTGCAGCCTCCCGAAACCGTCGTGCCCTGAATGTTCCTGTGGGTGTGTCTGGTCTTGCAAGAATTGTACAGA	TAGATCCTTTTTT	erect panicle and decreasing plant height
-Chr4	27940807	Manta	A	<DEL>	black seed coat
-Chr6	5316231	Manta	AACGGCAGCGGCGGCGGCGGCGGCGACGACGACCACCGTGTGGGCG	AGCAGCCAGCCT	colorless apiculus 
-Chr4	19836043	Manta	ACGGCGGCGGCGGCTGCGGCAG	A	increasing blast resistance
-Chr8	26729913	Manta	TTTCATCATAAGTCAGTTCTG	T	increasing blight resistance
-Chr11	20805203	Manta	CCGGAATCTT	C	increasing blight resistance
-Chr3	220111	Manta	CCTCCACTTCTTCACCTTCTCCGACGCGTGCGGCTGCCAGTGCGGCTCATGCCCTAGTCCCGGCGGAGGAGG	C	decreasing low-temperature germinability ability
-Chr1	37694037	Manta	A	<DEL>	decreasing nonphotochemical quenching
-Chr5	5365122-5366701	depthcall	Present (0|0)	Absent (1|1)	increasing grain width
-Chr7	9152377-9155030	depthcall	Present (0|0)	Absent (1|1)	promoting heading date under LD
-Chr3	17410000-17412951	depthcall	Present (0|0)	Absent (1|1)	awn absent
-Chr9	12251875-12254061	depthcall	Present (0|0)	Absent (1|1)	increasing anaerobic germination tolerance
-Chr1	29020797-29025975	depthcall	Present (0|0)	Absent (1|1)	fewer strigolactone
-Chr1	29036327-29041621	depthcall	Present (0|0)	Absent (1|1)	fewer strigolactone
-Chr1	DPL1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	hybrid incompatibility
-Chr3	Sc	Unmapped Reads	Nip (0|0)	nonNip (1|1)	hybrid male sterility
-Chr10	Rf4-1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	non-restorer
-Chr10	Rf4-2	Unmapped Reads	Nip (0|0)	nonNip (1|1)	non-restorer
-Chr1	GH3-2	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance
-Chr1	Pi64	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr9	Pi5-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr9	Pi5-2_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Xa23_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance
-Chr11	Pik-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pikm1-TS_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pikh-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pikp-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pi1-5_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pik-2_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pikp-2_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Pi1-6_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr11	Xa4	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance
-Chr12	BPH9-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance
-Chr12	BPH9-7	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance
-Chr12	BPH9-9	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance
-Chr12	BPH26	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance
-Chr4	Pi63	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr2	Pib	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr6	PigmR	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance
-Chr6	PigmS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	decreasing blast tolerance and increasing setting rate
-Chr11	Xa10	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance
-Chr11	HAN1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	losing chilling tolerance
-Chr12	SNORKEL1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	adaptation to deep water
-Chr12	SNORKEL2	Unmapped Reads	Nip (0|0)	nonNip (1|1)	adaptation to deep water
-Chr9	Sub1A	Unmapped Reads	Nip (0|0)	nonNip (1|1)	submergence tolerance
-Chr12	PSTOL1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing phosphorus tolerance
+Chr	Pos_7.0	Method_Genotyping	Ref_geno	Alt_geno	Alt_Allele_Func	GeneName
+Chr1	5271719	GATK4	TTCAGCCATGGG	T	increasing grain number	Gn1a
+Chr1	5270928	GATK3	A	C	increasing grain number	Gn1a
+Chr1	5568692	GATK4	T	C	fertility restoration	Rf3
+Chr1	18722895	GATK4	C	T	hybrid incompatibility	ESA1
+Chr1	22376434	GATK4	C	T	Hybrid male sterility	SaF
+Chr1	22381235	GATK4	T	G	Hybrid male sterility	SaM
+Chr1	31558876	GATK4	G	GCAAAGTTGCCAT	increasing grain number	NOG1
+Chr1	33695501	GATK4	A	T	interspecific hybrid weakness	Hwi2
+Chr1	35558484	GATK4	C	A	increasing grain number	LAX1
+Chr1	35555900	GATK3	T	C	decreasing tiller number	LAX1
+Chr2	6397412	GATK4	C	A	thermosensitive male sterility	tms5
+Chr2	8117283	GATK4	CA	C	larger grain width and weight	GW2
+Chr2	9997737	GATK4	C	T	fertility restoration	Rf2
+Chr2	28865723	GATK4	G	T	larger grain size and higher nitrogen use efficiency	OsGRF4
+Chr3	4353347	GATK4	A	C	increasing grain length	OsLG3
+Chr3	4352886	GATK4	T	A	increasing drought tolerance	OsLG3
+Chr3	6053303	GATK4	C	A	increasing grain length	OsMADS1
+Chr3	16733441	GATK4	G	T	increasing grain length	GS3
+Chr3	17340602	GATK4	T	C	deceasing grain length	GL3.2
+Chr3	25046741	GATK4	G	T	increasing grain length	GL3.1
+Chr3	28093193	GATK4	G	A	decreasing generation of stale flavor	LOX-3
+Chr3	35390422	GATK4	C	T	increasing grain length	GL3.3
+Chr3	36150781	GATK4	G	A	increaing grain number and plant height	GNP1
+Chr4	14804882	GATK4	C	T	hybrid incompatibility	S28
+Chr4	19403332	GATK4	T	C	hybrid incompatibility	DGS1
+Chr4	31212801	GATK4	A	G	decreasing leaf width and yield	NAL1
+Chr5	2604473	GATK4	G	A	increasing setting rate	PTB1
+Chr5	3444274	GATK4	C	T	decreasing grain width	GS5
+Chr5	3444712	GATK4	G	A	decreasing grain width	GS5
+Chr5	5365256	GATK4	G	A	increasing grain width	GW5
+Chr6	1468526	GATK4	T	TCTCTCACTCTCA,TCTCTCA,TCTCTCACTCTCACTCTCA	decreasing grain size	GS6
+Chr6	4201227	GATK4	C	T	hybrid incompatibility	DPL2
+Chr6	5745402	GATK4	C	CCAGTGATCGAAAT	hybrid incompatibility	ORF3
+Chr6	5758523	GATK4	AGCCGCGTAGCT	A	hybrid incompatibility	ORF4
+Chr6	5759744	GATK3	A	ATTAAATTT	hybrid compatibility	S5
+Chr6	5761369	GATK4	TACAACGATCC	T	hybrid compatibility	S5
+Chr6	25093552	GATK4	CG	C	increasing grain weight	TGW6
+Chr6	25093498	GATK4	CCGCT	C	increasing grain weight	TGW6
+Chr6	26592357	GATK4	C	T	increasing grain weight and plant height	GW6a
+Chr7	15787003	GATK4	G	T	hybrid compatibility	S7
+Chr7	19103249	GATK3	AGTGGAAGGC	A	increasing grain size	OsSPL13
+Chr7	24669233	GATK4	CTATCACTTTCT	C	increasing grain length	GW7
+Chr7	24714487	GATK4	A	C	increasing grain size	CYP78A13
+Chr7	24714768	GATK4	G	T	increasing grain size	CYP78A13
+Chr7	28306257	GATK4	C	CGCGTGCGCGTCCGTGCGT	loose panicle	FZP
+Chr8	26501540	GATK4	TGCG	T	increasing grain width	GW8
+Chr8	26505387	GATK4	C	A	increasing grain width	GW8
+Chr10	18835456	GATK4	T	A	fertility restoration	Rf4
+Chr10	18952469	GATK3	C	CA	fertility restoration	Rf1a
+Chr10	19058375	GATK4	G	A	fertility restoration	Rf1b
+Chr10	19462395	GATK4	CGCG	C,CGCGGCG	decreasing grain-filling rate 	GFR1
+Chr12	24647360	GATK4	TA	T	hybrid incompatibility	HSA1a
+Chr12	24669797	GATK3	GA	G	hybrid incompatibility	HSA1b
+Chr12	22054886	GATK4	C	G	photoperiod-sensitive male sterility	pms3
+Chr7	6693475	GATK4	G	T	photoperiod-sensitive male sterility	pms1
+Chr1	36355847	GATK4	G	A	delaying heading date under LD	HESO1
+Chr1	40344413	GATK3	ACACCACCACACACACG	A	delaying heading date	OsMADS51
+Chr1	40363925	GATK4	GAGGA	G	delaying heading date	OsMADS51
+Chr2	23990288	GATK4	C	A	promoting heading date	OsCOL4
+Chr2	23991055	GATK4	GTGCA	G	promoting heading date	OsCOL4
+Chr2	30096330	GATK4	A	G	delaying heading date under LD	DTH2
+Chr3	718648	GATK4	A	T	delaying heading date	Ehd4
+Chr3	1270327	GATK4	T	C	delaying heading date	OsSOC1
+Chr3	31512460	GATK4	A	T	delaying heading date under LD	Hd6
+Chr3	33002789	GATK4	G	A	promoting heading date under LD	Hd16
+Chr3	33001571	GATK4	G	C	promoting heading date under LD	Hd16
+Chr6	2235191	GATK4	A	G	delaying heading date	Hd17
+Chr6	2928178	GATK4	G	A	delaying heading date	RFT1
+Chr6	2942292	GATK4	C	A	promoting heading date under SD	Hd3a
+Chr6	2940130	GATK4	A	T	promoting heading date	Hd3a
+Chr6	9337101	GATK4	CG	C	promoting heading date under LD	Hd1
+Chr6	9338220	GATK4	CAAGA	C	promoting heading date under LD	Hd1
+Chr6	9338004	GATK4	CTT	C	promoting heading date under LD	Hd1
+Chr6	9338243	GATK4	C	T	promoting heading date under LD	Hd1
+Chr6	9337217	GATK4	AGAAG	A	promoting heading date under LD	Hd1
+Chr6	9337239	GATK3	G	GGTTAT	promoting heading date under LD	Hd1
+Chr7	9152558	GATK4	G	T	promoting heading date under LD	Ghd7
+Chr7	9154664	GATK4	C	A	promoting heading date under LD	Ghd7
+Chr7	9152488	GATK4	C	G	delaying heading date under LD	Ghd7
+Chr7	9154489	GATK4	G	C	promoting heading date under LD	Ghd7
+Chr7	29623435	GATK4	C	G	promoting heading date under LD	Ghd7.1
+Chr7	29627357	GATK4	AGAACGTTG	A	promoting heading date under LD	Ghd7.1
+Chr7	29628481	GATK4	T	C	promoting heading date under LD	Ghd7.1
+Chr7	29628484	GATK4	C	T	promoting heading date under LD	Ghd7.1
+Chr7	29628500	GATK4	T	C	promoting heading date under LD	Ghd7.1
+Chr7	29628529	GATK4	C	T	promoting heading date under LD	Ghd7.1
+Chr8	2388554	GATK4	T	C	delaying heading date	Hd18
+Chr8	4332836	GATK3	A	ATGCCC	promoting heading date under LD	DTH8
+Chr8	4334416	GATK4	CT	C	promoting heading date under LD	DTH8
+Chr8	4333948	GATK3	G	GTGTAGAGCGCGACA	promoting heading date under LD	DTH8
+Chr8	4334281	GATK4	GGCCTTCTC	G	promoting heading date under LD	DTH8
+Chr8	4333871	GATK4	A	C	promoting heading date under LD	DTH8
+Chr8	4334626	GATK3	CCCGCAGCCGCCGCCGCCAG	C	promoting heading date under LD	DTH8
+Chr10	17076177	GATK4	T	C	delaying heading date	Ehd1
+Chr10	17077589	GATK4	C	T	delaying heading date	Ehd1
+Chr10	20872491	GATK4	A	AT	promoting heading date under LD	OsMADS56
+Chr11	2454121	GATK4	C	T	delaying heading date	RCN1
+Chr3	1666408	GATK3	A	ACTCGT	promoting heading date under LD	MIR528
+Chr1	5244076	GATK4	G	T	larger tiller angle	D2
+Chr1	29929465	GATK4	G	A	larger flag leaf angle	OsBRI1
+Chr1	29930698	GATK4	C	T	larger flag leaf angle	OsBRI1
+Chr1	38382846	GATK3	CCG	C	semi-dwarf	sd1
+Chr1	38383141	GATK3	TA	T	semi-dwarf	sd1
+Chr1	38385057	GATK4	A	G	higher plant height	sd1
+Chr1	38385064	GATK3	C	G	semi-dwarf	sd1
+Chr1	38381646	GATK4	GTT	GT,G	flooding adaptation	sd1
+Chr3	3845747	GATK4	G	T	larger flag leaf angle	OsbHLH153
+Chr3	28428731	GATK4	G	GTGTA	increasing lodging resistance	OsTB1
+Chr3	28513552	GATK4	C	A	higher plant height	SLR1
+Chr3	29586015	GATK3	A	C	larger tiller angle	TAC3
+Chr5	6658027	GATK4	C	T	increasing mesocotyl length	OsGSK2
+Chr5	25515106	GATK4	G	C	higher plant height	SBI
+Chr6	27480778	GATK4	G	C	increasing lodging resistance	APO1
+Chr6	27484286	GATK4	C	T	increasing grain number	APO1
+Chr8	20930988	GATK4	C	T	smaller tiller angle	TIG1
+Chr8	26887943	GATK4	C	T	decreasing tiller number and increasing grain number	OsOTUB1
+Chr8	27998573	GATK4	G	T	increasing plant height	OsSPY
+Chr9	14567436	GATK4	CCGG	C	decreasing tiller number	OsTb2
+Chr9	14568100	GATK4	T	C	increasing tiller number	OsTb2
+Chr9	17133004	GATK4	CCGCCGCCGCCACCGG	C	increasing root thickness and root length	qRT9
+Chr9	20731844	GATK4	C	T	larger tiller angle	TAC1
+Chr10	13723265	GATK4	A	G	increasing flag leaf angle	OsbHLH174
+Chr11	4433136	GATK3	G	GGCGGCGTCGTCGTCGTCT	delaying heading date and increasing plant height	GATA28
+Chr11	27206054	GATK4	G	A	decreasing lateral roots number	TIPS-11-9
+Chr1	25383832	GATK4	G	GA	light red seed coat	Rd
+Chr1	25382824	GATK4	G	T	light red seed coat	Rd
+Chr1	25383093	GATK4	A	C	red seed coat	Rd
+Chr1	36461792	GATK4	T	G	seed shattering	qSH1
+Chr4	16734470	GATK4	GC	G	awn absent	An-1
+Chr4	16734743	GATK4	GGGC	GGGCGGC,G	awn present	An-1
+Chr4	25960486	GATK4	C	CTAT	awn present	An-2
+Chr4	25959585	GATK4	TC	T	shorter awn	An-2
+Chr5	990754	GATK4	T	A	glabrousness of rice leave glumes	OsWOX3B
+Chr6	5316554	GATK3	C	CTGCAGGCTCCG	colorless apiculus 	OsC1
+Chr6	5315389	GATK4	C	G	slight pigmentation apiculus	OsC1
+Chr6	5316049	GATK4	ATC	A	colorless apiculus 	OsC1
+Chr6	5316058	GATK4	TACTGGAACAG	T	colorless apiculus 	OsC1
+Chr6	27024794	GATK4	C	CCAAAGTTTAACAGTATAGT	increasing grain weight and plant height	HL6
+Chr7	6068071	GATK4	A	AACGCGAAAAGTCGG	red seed coat	Rc
+Chr7	6068017	GATK4	C	A	red seed coat	Rc
+Chr8	23999540	GATK3	G	GC,GCCGC	awn present	RAE2
+Chr8	23999545	GATK4	G	GC	awn absent	RAE2
+Chr8	23999487	GATK3	G	C	awn absent	RAE2
+Chr8	23996438	GATK4	T	TAGGTGTGGCATGGCAAACAAAGTGTGGCCAACAAATTGTTGGCCAC,C	increasing grain length	RAE2
+Chr1	38137703	GATK4	CTCTGTG	C	increasing seed protein content	OsAAP6
+Chr5	3339934	GATK4	G	C	decreasing of chalkiness	Chalk5
+Chr6	1633040	GATK4	A	G	more L-asparagine	OsACS6
+Chr6	1767613	GATK4	G	A	decreasing amylose content	Waxy
+Chr6	1765761	GATK4	T	G	decreasing amylose content	Waxy
+Chr6	1767637	GATK4	A	G	decreasing amylose content	Waxy
+Chr6	1768006	GATK4	A	C	increasing amylose content	Waxy
+Chr6	1768998	GATK4	C	T	increasing amylose content	Waxy
+Chr6	1767006	GATK4	G	GCCACGGGTTCCAGGGCCTCAAGC	glutinous rice	Waxy
+Chr6	6752756	GATK4	A	G	increasing gelatinization temperature	ALK
+Chr6	6752888	GATK4	C	T	increasing gelatinization temperature	ALK
+Chr8	20382858	GATK4	AAAGAT	A	fragrance	Badh2
+Chr8	20379883	GATK4	ATCG	A	fragrance	Badh2
+Chr8	20385593	GATK4	T	TG	fragrance	Badh2
+Chr10	13500469	GATK4	TTATTAGCGCATGATTAATTA	ATATTAGCGCATGATTAATTA,T	increasing protein content	OsGluA2
+Chr1	30712558	GATK4	C	T	more 7-O-glucoside	OsUGT706D1
+Chr2	35370598	GATK4	G	T	fewer trigonelline	LOC_Os02g57760
+Chr3	35382034	GATK4	T	A	more tricin-lignan-glycosides	OsUGT706C2
+Chr4	6566248	GATK3	G	GAC	more O-methylapigenin C-pentoside	LOC_Os04g11970
+Chr7	2188914	GATK3	G	A	fewer feruloylserotonin	LOC_Os07g04970
+Chr7	2188863	GATK3	C	G	fewer feruloylserotonin	LOC_Os07g04970
+Chr7	2188150	GATK3	A	G	fewer feruloylserotonin	LOC_Os07g04970
+Chr7	19060398	GATK4	C	T	more 5-O-glucoside	OsUGT707A2
+Chr7	19061600	GATK4	AC	A	more 5-O-glucoside	OsUGT707A2
+Chr7	19061609	GATK4	CCCGTGCTGTCGTTCAA	C	more 5-O-glucoside	OsUGT707A2
+Chr9	21464008	GATK4	G	A	fewer N-feruloylputrescine	OsAT4c
+Chr11	25467884	GATK3	A	C	fewer benzoyl tryptamine	Os-TBT1
+Chr11	25501655	GATK4	C	A	fewer cinnamoyl tryptamine	Os-TBT2
+Chr12	15970614	GATK4	C	T	fewer N',N''-p-coumaroyl feruloyl spermidine	LOC_Os12g27220
+Chr12	15999119	GATK4	G	A	fewer N',N''-p-coumaroyl feruloyl spermidine	LOC_Os12g27254
+Chr12	16005096	GATK4	C	T	fewer N',N''-p-coumaroyl feruloyl spermidine	LOC_Os12g27254
+Chr12	15999070	GATK4	C	T	fewer N',N''-p-coumaroyl feruloyl spermidine	LOC_Os12g27254
+Chr1	33144288	GATK4	A	C	increasing blast resistance	Pi35
+Chr3	18437564	GATK4	T	C	increasing blast resistance	bsr-d1
+Chr4	6942614	GATK4	T	C	increasing insect resistance	Bph3
+Chr4	6956655	GATK4	C	T	increasing insect resistance	Bph3
+Chr4	6968474	GATK4	A	G	increasing insect resistance	Bph3
+Chr4	19835833	GATK4	TCGGCGGCGGCTTCTC	T	increasing blast resistance	Pi21
+Chr4	31600315	GATK4	G	A	decreasing blast tolerance	PiPR1
+Chr4	31602115	GATK4	G	A	decreasing blast tolerance	PiPR1
+Chr4	31602847	GATK3	GAA	G	decreasing blast tolerance	PiPR1
+Chr4	31640498	GATK4	T	A	increasing blight resistance	Xa1
+Chr4	31661301	GATK4	G	A,T	increasing blight resistance	Xa1
+Chr4	31662295	GATK4	G	T	increasing blight resistance	Xa1
+Chr5	437499	GATK4	T	A	increasing blight resistance	xa5
+Chr6	485049	GATK4	T	TCGCCGCCGCCGC	increasing brown planthopper resistance	BPH29
+Chr6	10389573	GATK4	G	A	increasing blast resistance	Pi9
+Chr6	10389270	GATK3	C	T	increasing blast resistance	Pi9
+Chr6	10389855	GATK4	C	T	increasing blast resistance	Pi9
+Chr6	10389734	GATK4	T	A	increasing blast resistance	Pi9
+Chr6	13058843	GATK4	GCCCTGAAGA	G	increasing blast resistance	Pid3
+Chr6	13055819	GATK4	A	G	increasing blast resistance	Pid3
+Chr6	13057570	GATK3	A	G	increasing blast resistance	Pid3
+Chr6	17161791	GATK4	C	T	increasing blast resistance	Pid2
+Chr7	22119347	GATK4	ATGT	A,GTGT	increasing resistance to tungro spherical virus	eIF4G
+Chr7	22119350	GATK4	T	C,*	increasing resistance to tungro spherical virus	eIF4G
+Chr8	26909531	GATK4	T	C	increasing blast resistance	OsCERK1
+Chr9	9672381	GATK3	A	G	increasing blast resistance	Pi5-1
+Chr9	9779736	GATK4	A	G	increasing blast resistance	Pi56
+Chr11	6543950	GATK4	C	G	increasing blast resistance	RGA4
+Chr11	6544171	GATK3	G	A	increasing blast resistance	RGA4
+Chr11	6554829	GATK4	T	A	increasing blast resistance	RGA5
+Chr11	7659694	GATK4	T	C	increasing blast resistance	LHCB5
+Chr11	17985707	GATK4	A	T	increasing resistance to rice stripe virus	STV11
+Chr11	22800220	GATK4	A	AGAAAGGCTTTG	increasing blast resistance	Pb1
+Chr11	25263992	GATK3	C	T	increasing blast resistance	Pi54
+Chr11	28399471	GATK4	G	A	increasing blight resistance	Xa3
+Chr11	28399720	GATK4	A	G	increasing blight resistance	Xa3
+Chr12	10607554	GATK4	A	C	increasing blast resistance	Pi-ta
+Chr12	10833368	GATK4	TAAAAA	T	increasing blast resistance	Ptr
+Chr12	17302804	GATK4	G	A	decreasing blight resistance	xa25
+Chr12	17305353	GATK4	CT	CTT,C	decreasing blight resistance	xa25
+Chr1	11462725	GATK4	C	T	increasing salt tolerance	SKC1
+Chr1	23663634	GATK4	GT	G	increasing herbicides tolerance	CYP72A31
+Chr1	29568422	GATK4	GGCC	G	decreasing flooding tolerance 	OsCBL10
+Chr1	36346000	GATK4	T	C	increasing drought tolerance	OsPP15
+Chr2	1663821	GATK4	G	A	decreasing Al tolerance	NRAT1
+Chr2	5410205	GATK4	T	C	preventing copper accumulation	OsHMA4
+Chr2	10389082	GATK3	CATCAGGAACCAAAAGAATTAGAGACGAT	C	decreasing herbicide tolerance	HIS1
+Chr2	24771726	GATK4	T	A	decreasing chilling tolerance	LTG1
+Chr2	25190881	GATK4	C	G	preventing cd accumulation	CAL1
+Chr3	220180	GATK4	AGGCGGTGGCGGTGGCGGT	A	decreasing low-temperature germinability ability	qLTG3-1
+Chr3	846037	GATK4	T	A	cadmium accumulation	OsCd1
+Chr3	11326677	GATK4	G	A	decreasing cold tolerance	OsMYB2
+Chr4	2032882	GATK4	C	G	increasing chilling tolerance	CTB4a
+Chr4	23886659	GATK4	G	GT	increasing boron-toxicity tolerance	BET1
+Chr4	30315214	GATK4	T	A,G	decreasing chilling tolerance	COLD1
+Chr4	30726195	GATK4	T	C	increasing root sodium content	OsHKT1;1
+Chr4	33304910	GATK4	A	G	decreasing root length and weight	OsJAZ1
+Chr6	29539670	GATK4	T	C	lower potassium use efficiency	OsHKT2;1
+Chr6	29540384	GATK4	GC	G	lower potassium use efficiency	OsHKT2;1
+Chr7	7409315	GATK4	C	T	high cadmium accumulation	OsHMA3
+Chr7	7407917	GATK4	T	G	high cadmium accumulation	OsHMA3
+Chr7	8878858	GATK4	AG	A	high cadmium accumulation	OsNRAMP5
+Chr7	8879641	GATK4	A	G	high cadmium accumulation	OsNRAMP5
+Chr7	22930113	GATK4	T	C	increasing resistance to tungro spherical virus	OsSAP16
+Chr8	86089	GATK4	T	C	decreasing molybdenum accumulation	Os-MOT1;1 
+Chr9	12251074	GATK4	A	AAT	increasing anaerobic germination tolerance	OsTPP7
+Chr9	18122850	GATK4	C	T	decreasing chilling tolerance	bZIP73
+Chr10	4665777	GATK4	C	G	decreasing UV-B tolerance	qUVR-10
+Chr10	4666493	GATK4	C	T	increasing UV-B tolerance	qUVR-10
+Chr10	16705740	GATK4	T	TA	increasing drought tolerance	DCA1
+Chr10	19330694	GATK4	G	A	dereasing chilling tolerance	OsLTPL159
+Chr11	16984309	GATK4	A	G	decreasing chilling tolerance	HAN1
+Chr12	14233796	GATK4	C	T	increasing lateral roots number	Nced
+Chr1	178766	GATK4	G	A	higher nitrogen use efficiency	OsNPF6.1
+Chr1	14452591	GATK4	G	C,T	increasing regeneration ablility	psr1
+Chr1	14452823	GATK4	T	G	increasing regeneration ablility	psr1
+Chr1	33453244	GATK4	C	T	more MeOH-Jasmonates	OsPME1
+Chr2	31768358	GATK4	A	G	more MeOH-Jasmonates	OsTSD2
+Chr2	32514337	GATK4	A	T	higher nitrogen use efficiency	OsNR2
+Chr3	6894836	GATK4	CT	C	callus browning	BOC1
+Chr3	21067004	GATK4	C	T	increasing salt tolerance	qSE3
+Chr4	31751160	GATK3	G	GTGCTCGTCATCGAGGGGA	grains turns brown in phenol solution	Phr1
+Chr7	23797131	GATK3	A	C	decreasing sprouting	Sdr4
+Chr7	23796771	GATK3	GC	G	increasing sprouting	Sdr4
+Chr7	23797130	GATK3	G	T	increasing sprouting	Sdr4
+Chr8	7573789	GATK4	G	GAGAAGA,GAGA	high cadmium accumulation	ARE1
+Chr8	7573877	GATK4	G	GGGCGGT	higher nitrogen use efficiency	ARE1
+Chr10	21759092	GATK4	G	A	higher nitrogen use efficiency	NRT1.1B
+Chr12	26956807	GATK4	G	C	increasing tolerance to nutrition	TOND1
+Chr2	2974723	Manta	A	<DEL>	decreasing yield	LRK1
+Chr5	29455208	Manta	AATTTTGTATGGGTACTAGCCATGCAATTGTGCGGATCACCCGGCTAGTTCGACGAATTCAAGCGTTTTTTGGGTTGCAGCGTTTGGAAGGAGGCCCAAATTAAAGTGGTGATCGAAATTGTCAAGTGCTTGAGTAGATAGAGATTTTGTTTGGTTGGCACTACCGAAGCATGCATTGTTGGAGTGGGATGCCATAGAGCTGCGATCAAGATCCGACGGCTCCCAATGGCTCTGGTGACATGTCTCCTTGACACTTTCCAAAAACGGACAATTGGTCGGTTGATGTTGGGTTCCTTATTTGTACTACTCCAGAAGTATATAAAAAGCGGAAGTTCCCAATGCAACAAGAGGAAGACGCCATTGGAGTCCAATTAACTTGAATAATGGCGCGTCGTCGTCTTGTCCTGCTGCTTCTCATCATTGGTACGTTATTATACTCATGGAGTAGGATGGTTAATTTGTTGATTTGCAGTTAGCGGAGGAGTAATTAATTAATTATGTTATTAATCTTGTGTTGGCATGGCAGCCGCGGCGGGTGCGGCGGCGTTTGGGATCCGACGAGATGCGCCCAAGGCATACTGCTTCTACGGCATTGAGTGGACGGGAGTGCCTTACTTGCCGGGCACCGCCGCCGCCATTTATATCGGCAACACCAACTCCTGCATCGCCGGCTACCACTCGCCGCCGGACACGGCCACCTCCTACCGGTTCTGCATCCCCTCCTGGGTGGCCTTCACCGCCAACGCCACCACCCTCTGCGGCCAACCCGCCGTCGACCACTCCGCCGCCATCTCCGGCTTCAAGCGACTCATCGGCCTACAGCCGGGAGATCCTCACGCCAAGAGGGTGGCGCAGATTGCGCCCTACAAGCTGGGGGAAAAGATCGGGAGATGCAGCATCCAGGTCCAACTGGACGATGGCGCCAAGTGCCGTGTGGAGG	A	decreasing plant height and grain number	OsEBS
+Chr6	5759611	Manta	TCGCTCCTACGAATCCTGCCCCTGAGTAACAATGACTGACTTTTAATTTGTTTGCAGCTAGGGTGGGGATCGAGATGGTGATCTTGGAGCAGCCACAGCTGCTCCTTCTTCTTCTTCTTCTTGTAGCAGCTGCAGCTGCAA	TTAAT	hybrid compatibility	S5
+Chr7	7545012	Manta	TTTCAGGTTACAAG	T	increasing grain length	OsSNB
+Chr8	537049	Manta	A	<DUP:TANDEM>	fertility restoration	RF6
+Chr8	25282468	Manta	G	<DUP:TANDEM>	increasing grain number and lodging resistance	IPA1
+Chr3	1257892	Manta	TGGGACAAATCCTGAGAGTTAAAAGTTGTTATATTTTAA	TAG	promoting heading date	Ef-cd
+Chr1	38382761	Manta	CCGAGCACGGCGTCGACGCCGCTCTGGCGCGCGCCGCGCTCGACGGCGCCAGCGACTTCTTCCGCCTCCCGCTCGCCGAGAAGCGCCGCGCGCGCCGCGTCCCGGGCACCGTGTCCGGCTACACCAGCGCCCACGCCGACCGCTTCGCCTCCAAGCTCCCATGGAAGGAGACCCTCTCCTTCGGCTTCCACGACCGCGCCGCCGCCCCCGTCGTCGCCGACTACTTCTCCAGCACCCTCGGCCCCGACTTCGCGCCAATGGGGTAATTAAAACGATGGTGGACGACATTGCATTTCAAATTCAAAACAAATTCAAAACACACCGACCGAGATTATGCTGAATTCAAACGCGTTTGTGCGCGCAGGAGGGTGTACCAGAAGTACT	CA	semi-dwarf	sd1
+Chr9	16415007	Manta	TTTTCATGCTTCAAATCCCTGTACAGCTGCTTCAAGATCCCTTCATGCTTCAAGTCCCAGTGCAACTGCTCTAGCCCCAATTGCTGCACTTGCACCCTTCCAAGCTGTAGCTGCAAGGGCTGTGCCTGTCCAAGCTGTGGATGCAACGGCTGTGGCTGTCCAAGCTGCGGATGCAACGGTTGTGGCTGTCCAAGCTGCGGTTGCAACGGCTGTGGCCTTCCAAGCTGCGGTTGCAACGGCTGCGGCTCGTGCTCTTGCGCCCAATGCAAACCCGATTGTGGCTCGTGCTCTACCAATTGCTGTAGCTGCAAGCCAAGCTGCAACGGCTGCTGCGGCGAGCAGTGCTGCCGCTGCGCGGACTGCTTCTCCTGCTCGTGCCCTCGTTGCTCCAGCTGCTTCAACATCTTCAAATGCTCCTGCGCTGGCTGCTGCTCGAGCCTGTGCAAGTGCCCCTGCACGACGCAGTGCTTCAGCTGCCAGTCGTCATGCTGCAAGCGGCAGCCTTCGTGCTGCAAGTGCCAGTCGTCTTGCTGCGAGGGGCAGCCTTCCTGCTGCGAGGGACACTGCTGCAGCCTCCCGAAACCGTCGTGCCCTGAATGTTCCTGTGGGTGTGTCTGGTCTTGCAAGAATTGTACAGA	TAGATCCTTTTTT	erect panicle and decreasing plant height	DEP1
+Chr4	27940807	Manta	A	<DEL>	black seed coat	Kala4
+Chr6	5316231	Manta	AACGGCAGCGGCGGCGGCGGCGGCGACGACGACCACCGTGTGGGCG	AGCAGCCAGCCT	colorless apiculus 	OsC1
+Chr4	19836043	Manta	ACGGCGGCGGCGGCTGCGGCAG	A	increasing blast resistance	Pi21
+Chr8	26729913	Manta	TTTCATCATAAGTCAGTTCTG	T	increasing blight resistance	Xa13
+Chr11	20805203	Manta	CCGGAATCTT	C	increasing blight resistance	Xa21
+Chr3	220111	Manta	CCTCCACTTCTTCACCTTCTCCGACGCGTGCGGCTGCCAGTGCGGCTCATGCCCTAGTCCCGGCGGAGGAGG	C	decreasing low-temperature germinability ability	qLTG3-1
+Chr1	37694037	Manta	A	<DEL>	decreasing nonphotochemical quenching	OsPsbS1
+Chr5	5365122-5366701	depthcall	Present (0|0)	Absent (1|1)	increasing grain width	GW5
+Chr7	9152377-9155030	depthcall	Present (0|0)	Absent (1|1)	promoting heading date under LD	Ghd7
+Chr3	17410000-17412951	depthcall	Present (0|0)	Absent (1|1)	awn absent	Awn3-1
+Chr9	12251875-12254061	depthcall	Present (0|0)	Absent (1|1)	increasing anaerobic germination tolerance	OsTPP7
+Chr1	29020797-29025975	depthcall	Present (0|0)	Absent (1|1)	fewer strigolactone	SLB1
+Chr1	29036327-29041621	depthcall	Present (0|0)	Absent (1|1)	fewer strigolactone	SLB2
+Chr1	DPL1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	hybrid incompatibility	DPL1
+Chr3	Sc	Unmapped Reads	Nip (0|0)	nonNip (1|1)	hybrid male sterility	Sc
+Chr10	Rf4-1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	non-restorer	Rf4
+Chr10	Rf4-2	Unmapped Reads	Nip (0|0)	nonNip (1|1)	non-restorer	Rf4
+Chr1	GH3-2	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance	GH3-2
+Chr1	Pi64	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pi64
+Chr9	Pi5-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pi5-1
+Chr9	Pi5-2_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pi5-2
+Chr11	Xa23_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance	Xa23
+Chr11	Pik-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-1
+Chr11	Pikm1-TS_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-1
+Chr11	Pikh-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-1
+Chr11	Pikp-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-1
+Chr11	Pi1-5_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-1
+Chr11	Pik-2_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-2
+Chr11	Pikp-2_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-2
+Chr11	Pi1-6_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pik-2
+Chr11	Xa4	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance	Xa4
+Chr12	BPH9-1_CDS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance	Bph9
+Chr12	BPH9-7	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance	Bph9
+Chr12	BPH9-9	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance	Bph9
+Chr12	BPH26	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing brown planthopper resistance	Bph9
+Chr4	Pi63	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pi63
+Chr2	Pib	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	Pib
+Chr6	PigmR	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blast resistance	PigmR
+Chr6	PigmS	Unmapped Reads	Nip (0|0)	nonNip (1|1)	decreasing blast tolerance and increasing setting rate	PigmS
+Chr11	Xa10	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing blight resistance	Xa10
+Chr11	HAN1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	losing chilling tolerance	HAN1
+Chr12	SNORKEL1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	adaptation to deep water	SNORKEL1
+Chr12	SNORKEL2	Unmapped Reads	Nip (0|0)	nonNip (1|1)	adaptation to deep water	SNORKEL2
+Chr9	Sub1A	Unmapped Reads	Nip (0|0)	nonNip (1|1)	submergence tolerance	Sub1A
+Chr12	PSTOL1	Unmapped Reads	Nip (0|0)	nonNip (1|1)	increasing phosphorus tolerance	PSTOL1

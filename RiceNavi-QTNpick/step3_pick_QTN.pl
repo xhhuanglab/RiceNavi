@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+use FindBin;
 
 my $QTNlist;
 my $diff_samples_file;
@@ -9,7 +10,9 @@ if(@ARGV < 2){
   ($diff_samples_file,$QTNlist) = @ARGV;
 }
 
-my $sample_type = "QTNpickLib/QTNlib.404lines_rice.type";
+`dos2unix $QTNlist`;
+my $sample_type = $FindBin::Bin."/QTNpickLib/QTNlib.404lines_rice.type";
+my $geno_matrix = $FindBin::Bin."/QTNpickLib/RiceNavi_QTNLib.genomatrix";
 
 open TYPE, $sample_type;
 open DIFF_GENO, $diff_samples_file;
@@ -29,14 +32,27 @@ my %count_samples;
 while(<TYPE>){chomp; $sample2type{$1} = $2 if /(.+?)\t(.+)/;}
 close TYPE;
 
-print OUT "GeneName\tChrom\tSite\tGenotyping_Method\tNipAllele(0|0)\tAltAllele\tAllele_Effect(AltAllele)\tNo. samples with different alleles\tQTNlib samples with different alleles\n";
+
+open MATRIX, $geno_matrix;
+my %snpsite2geno;
+while(<MATRIX>){
+  chomp;
+  my @tmp = split/\t/;
+  $snpsite2geno{$tmp[0]."\t".$tmp[1]} = $tmp[3].'/'.$tmp[4];	
+}
+
+#print OUT "GeneName\tChrom\tSite\tGenotyping_Method\tNipAllele(0|0)\tAltAllele\tAllele_Effect(AltAllele)\tNo. samples with different alleles\tQTNlib samples with different alleles\n";
+print OUT "GeneName\tChrom\tSite\tGenotyping_Method\tAlleles\tAllele_Effect(AltAllele)\tSampleGeno\tNo. samples with different alleles\tQTNlib samples with different alleles\n";
 while(<DIFF_GENO>){
   chomp;
   my @tmp = split/\t/;
+  my ($geneid,$chrom,$posi,$method,$effect,$genename,$samplegeno,$num,$diff_samples) = @tmp;
+  my $alleles = $snpsite2geno{$chrom."\t".$posi};
+  my $combined_info = $geneid."\t".$chrom."\t".$posi."\t".$method."\t".$alleles."\t".$effect."\t".$samplegeno."\t".$num."\t".$diff_samples;
   #print $tmp[0]."\t".$tmp[1]."\t".$tmp[2]."\n";
   if(defined $selected_alleles{$tmp[0]."\t".$tmp[1]."\t".$tmp[2]}){
     my @samples = split/\|/,$tmp[-1];
-    print OUT "$_\n";
+    print OUT "$combined_info\n";
     foreach my $sample (@samples){
     	if($sample =~ /(.+?)\(/){
     	  $count_samples{$1}++;	
