@@ -102,7 +102,7 @@ No. candidate accessions: 10
 
 ### RiceNavi-Sim 
 
-The RiceNavi-Sim package is implemented taking advantage of the [PedigreeSim](https://www.wur.nl/en/show/Software-PedigreeSim.htm) software. The PedigreeSim software can simulate the genotype of the offspring if the genotypes of the parents and the genetic map are given. With the constructed rice genetic map, the genotype matrix of different generations (F1 to BCnF1) for breeding population can be simulated by RiceNavi-Sim. During each generation, RiceNavi-Sim adopted `Rice-SampleSelect` package to select the best candidate as parental lines for next generation. The simulation time can be set by users. After all simulations are performed, the likelihood can be estimated. In each generation, the likelihood was calculated based on the percentage of simulations that have the ‘ideal’ individuals with only heterozygous genotypes in the regions covering selected gene(s).
+The PedigreeSim software can simulate the genotype of the offspring if the genotypes of the parents and the genetic map are given. With the constructed rice genetic map, the genotype matrix of different generations (F1 to BCnF1) for breeding population can be simulated by RiceNavi-Sim. During each generation, RiceNavi-Sim adopted `Rice-SampleSelect` package to select the best candidate as parental lines for next generation. The simulation time can be set by users. After all simulations are performed, the likelihood can be estimated. In each generation, the likelihood was calculated based on the percentage of simulations that have the ‘ideal’ individuals with only heterozygous genotypes in the regions covering selected gene(s).
 
 Before running the script, edit the parameters in the config file `RiceNavi-Sim.cfg`
 and file for target genes `Selected_Genes.loci` based on needs.
@@ -144,6 +144,8 @@ if <Target_size> is set to 2, the output files are: `stat_simulation.2M` & `stat
 ############################################################
 
 ############################################################
+
+Since the RiceNavi-Sim package is implemented taking advantage of the [PedigreeSim](https://github.com/PBR/pedigreeSim) software. Please see the copyright notice of PedigreeSim:
 
 This distribution includes a copy of the jsci-core library which is subject to the following conditions:
 
