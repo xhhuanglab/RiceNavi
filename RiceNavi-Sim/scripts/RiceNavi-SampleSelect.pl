@@ -56,6 +56,7 @@ open LIST, $genelist;
 while(<LIST>){
   chomp;
   s/ //;
+  next if /^\#/;
   my ($geneid,$genename,$chrom,$start,$end) = split/\t/;
   $chrom =~ s/chr0|chr//i;
   $start =~ s/\,//g; $end =~ s/\,//g;

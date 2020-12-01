@@ -91,7 +91,7 @@ for my $sim_num (1..$simulation_times){
 }
 
 ### Run simulations in batch ###
-chdir "$outprefix.parallel_cmd_dir";
+chdir "$outprefixparallel_cmd_dir";
 print localtime() ." Start Simulating...\n";
 
 if($simulation_times % $cut_num != 0){
