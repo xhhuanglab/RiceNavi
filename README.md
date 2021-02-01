@@ -1,4 +1,4 @@
-## RiceNavi
+RiceNavi
 
 
 
@@ -24,6 +24,8 @@ http://www.xhhuanglab.cn/tool/RiceNavi.html (supporting most browsers including 
 
 
 
+
+
 ### RiceNavi-QTNpick
 
 Taking adavantage of the integrated QTN map, the RiceNavi-QTNpick package can take mapping BAM file of user's rice sample (receptor rice sample) as input, and call the genotype of the sample at the causative sites. The genotype of  the user's sample is compared to those of the samples in the QTN library, after which the QTN library samples harboring the alterative allele for each QTN could be provided. Users can pick the beneficial QTN(s). After picking the QTN(s), the donor sample list will be provided.
@@ -33,25 +35,46 @@ We here provide a script `pre_mapping_to_bam_pipeline.pl` (in the RiceNavi-QTNpi
 
 Generate `realigned.bam` with User sample's paired-end fastq files as  inputs. 
 
-CMD: `perl pre_mapping_to_bam_pipeline.pl RiceNavi-QTNpick.cfg fq1 fq2 SamplePrefix `   
+CMD: `perl /Path_to_RiceNavi/RiceNavi-QTNpick/pre_mapping_to_bam_pipeline.pl RiceNavi-QTNpick.cfg fq1 fq2 SamplePrefix `   
 
-In the 'RiceNavi-QTNpick.cfg' file, please edit the PATH to the required softwares.
+Before running, please install the required softwares  ([bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), [samtools](http://www.htslib.org/download/), [sambamba](https://lomereiter.github.io/sambamba/), [GATK3](https://anaconda.org/bioconda/gatk/files), [GATK4](https://github.com/broadinstitute/gatk/releases), [Manta](https://github.com/Illumina/manta/releases), [bam2fastq](https://github.com/jts/bam2fastq)).  Edit the PATHs of the softwares and rice genome (MSU v7) in the config file `RiceNavi-QTNpick.cfg`.
 
-After BAM file is available, further steps could be performed.
+[RiceNavi-QTNpick.cfg]
+
+\## e.g. ##
+
+bowtie2 = /tool/bowtie2-2.3.2/bowtie2
+
+samtools = /tool/samtools-1.9/bin/samtools
+sambamba_soft = /tool/sambamba_v0.6.7
+GATK4 = /tool/GATK4/share/gatk4-4.1.3.0-0/gatk-package-4.1.3.0-local.jar
+GATK3 = /tool/GATKv3.7/GenomeAnalysisTK.jar
+configManta =/tool/manta/manta-1.6.0.centos6_x86_64/bin/configManta.py
+bam2fastq = /tool/bam2fastq-1.0.0/bam2fastq
+
+Ref_genome = /rice_genome/MSUv7/Rice_MSUv7.fa
+
+#######
+
+After BAM file is generated, further steps could be performed.
 
 
 
 **Step1: Genotyping causal variant sites for User's sample.**  
 
-CMD: `perl step1_Indiv_CausalVar_genotyping.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`   
+CMD: `perl /Path_to_RiceNavi/RiceNavi-QTNpick/step1_Indiv_CausalVar_genotyping.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`   
 
-Then the genotype file (`SamplePrefix.RiceNavi_Causal_Var.site.geno`) of the User's sample will be generated at the folder `SamplePrefix`
+Then the genotype file (`SamplePrefix.RiceNavi_Causal_Var.site.geno`) of the User's sample will be generated in the folder `SamplePrefix`
+
+
+
+<u>Users can directly upload the sample's genotype file `SamplePrefix.RiceNavi_Causal_Var.site.geno` to our online [RiceNavi](http://www.xhhuanglab.cn/tool/RiceNavi.html) (QTNpick (User Sample) ) to pick the beneficial QTN(s) and find the donor samples<u>. The following steps for RiceNavi-QTNpick are not needed.</u>
 
 
 
 **Step2: Find rice accessions in our QTNlib with different allele of each causative site.**  
 
-CMD:`perl step2_samples_with_diff_CausalVar.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno>`   
+CMD:`perl /Path_to_RiceNavi/RiceNavi-QTNpick/step2_samples_with_diff_CausalVar.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno>`   
 Output: 'SamplePrefix.RiceNavi_Causal_Var.site.geno.samples'  
 The output format is like:  
 
@@ -65,7 +88,7 @@ The output format is like:
 
 
 **Step3:  Users pick QTNs to find candidate rice donor lines in QTNlib based on specific rice breeding purpose.**  
-`perl step3_pick_QTN.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno.samples> <Selected_QTNlist>`  
+`perl /Path_to_RiceNavi/RiceNavi-QTNpick/step3_pick_QTN.pl <SamplePrefix.RiceNavi_Causal_Var.site.geno.samples> <Selected_QTNlist>`  
 
 #for example:  
 
@@ -102,7 +125,7 @@ No. candidate accessions: 10
 
 ### RiceNavi-Sim 
 
-The PedigreeSim software can simulate the genotype of the offspring if the genotypes of the parents and the genetic map are given. With the constructed rice genetic map, the genotype matrix of different generations (F1 to BCnF1) for breeding population can be simulated by RiceNavi-Sim. During each generation, RiceNavi-Sim adopted `Rice-SampleSelect` package to select the best candidate as parental lines for next generation. The simulation time can be set by users. After all simulations are performed, the likelihood can be estimated. In each generation, the likelihood was calculated based on the percentage of simulations that have the ‘ideal’ individuals with only heterozygous genotypes in the regions covering selected gene(s).
+With the constructed rice genetic map, the genotype matrix of different generations (F1 to BCnF1) for breeding population can be simulated by RiceNavi-Sim. RiceNavi-Sim is taking advantage of the  [PedigreeSim](https://github.com/PBR/pedigreeSim) software, which can simulate the genotype of the offspring if the genotypes of the parents and the genetic map are given.  During each generation, RiceNavi-Sim adopted `Rice-SampleSelect` package to select the best candidate as parental lines for next generation. The simulation time can be set by users. After all simulations are performed, the likelihood can be estimated. In each generation, the likelihood was calculated based on the percentage of simulations that have the ‘ideal’ individuals with only heterozygous genotypes in the regions covering selected gene(s).
 
 Before running the script, edit the parameters in the config file `RiceNavi-Sim.cfg`
 and file for target genes `Selected_Genes.loci` based on needs.
@@ -127,10 +150,14 @@ Sim_times = 100
 #for example:  
 LOC_Os08g07740	DTH8	Chr8	4333717	4335434  
 
-Script Usage:  
-`perl RiceNavi-Sim_run_scripts.pl <RiceNavi-Sim.cfg> <Selected_Genes.loci>  `  
 
-The simulation outputs will be stored in 'simulation_dir'  
+
+Script Usage:  
+`perl /Path_to_RiceNavi/RiceNavi-Sim/RiceNavi-Sim_run_scripts.pl <RiceNavi-Sim.cfg> <Selected_Genes.loci>  `  
+
+
+
+The simulation outputs will be stored in the `simulation_dir`  
 After simulation process is finished, `cd` into directory `simulation_dir`, and run script `stat_likelihood.pl`  .
 
 CMD: `perl Stat_Sim_likelihood.pl <Target_size> <backcrossing_times>`   
@@ -138,6 +165,8 @@ The <Target_size> is the size (Mb) of genomic region that covers the selected ge
 if <Target_size> is set to 2, the output files are: `stat_simulation.2M` & `stat_simulation.2M.Likelihood`  
 
 
+
+<u>Note that simulations with large population size and simulation times could be time-consuming, running on  linux server is recommended. The simulations (population size less than 500) could also be performed [online](http://www.xhhuanglab.cn/tool/RiceNavi.html).</u>
 
 
 
@@ -175,10 +204,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 ### RiceNavi-SampleSelect
 
-The Rice-SampleSelect package can select suitable genotypes to facilitate the breeding process. The input file for this package is a genotyping matrix, where each column represents samples, while each row is the binned genotype (e.g. 0.3 Mb per bin). The genotyping matrix is generated by the genotyping pipeline [SEG-map](http://db.ncgr.ac.cn/SEG/) for skim genome sequencing.  The Rice-SampleSelect package can output the  summarized genotype characteristics for each individual of that population, such as No. recombination breakpoints, heterozygosity across the whole genome, the No. heterozygous genomic blocks, the size of the heterozygous regions covering the targeted genes, and etc. The samples with heterozygous genotypes on target genes are ranked according to the whole genome heterozygosity level.
+The Rice-SampleSelect package can select suitable genotypes to facilitate the breeding process. The input file for this package is a genotyping matrix, where each column represents samples, while each row is the binned genotype (e.g. 0.3 Mb per bin). The genotyping matrix is generated by the genotyping pipeline [SEG-map](http://db.ncgr.ac.cn/SEG/) for skim genome sequencing.  The Rice-SampleSelect package can output the  summarized genotype characteristics for each individual of the population, such as No. recombination breakpoints, heterozygosity across the whole genome, the No. heterozygous genomic blocks, the size of the heterozygous regions covering the targeted genes, and etc.. The samples with heterozygous genotypes on target genes are ranked according to the whole genome heterozygosity level.
 
 Usage: 
-`perl RiceNavi-SampleSelect.pl <Genotyping Matrix> <Genelist> <OutPrefix> > OutFile`
+`perl /Path_to_RiceNavi/RiceNavi-SampleSelect/step1_RiceNavi-SampleSelect.pl <Genotyping Matrix> <Genelist> <OutPut(Indiv_info))>`
+
+`perl /Path_to_RiceNavi/RiceNavi-SampleSelect/step2_pick_top_candidates.pl <OutPut(Indiv_info)>`
 
 Input format:  
 (1) \<Genotyping Matrix> 
@@ -195,13 +226,13 @@ The format is as follows:
 | 12_27.3 | 0       | 0       | 0       | 1       | 1       |
 | 12_27.6 | 0       | 0       | 0       | 1       | 1       |
 
-Note that the 1st column is the combination of chromosome ID and 
+Note that the 1st column is the combination of chromosome ID and the start location of that window bin (Mb).
 
 (2) \<Genelist>  
 The locations (Rice MSUv7) of genes selected by Users.  
 The format is like:  
 
-| GeneID         | GeneName | Chrom | Start   | End     |
+| #GeneID        | GeneName | Chrom | Start   | End     |
 | -------------- | -------- | ----- | ------- | ------- |
 | LOC_Os08g07740 | DTH8     | chr8  | 4333717 | 4335434 |
 | LOC_Os05g01710 | xa5      | Chr5  | 437010  | 443270  |
@@ -217,18 +248,14 @@ Output: Summarized genotype characteristics for each individual. The individuals
                    (6) Size of the heterozygous regions covering the targeted genes  
                    (7) Whether (Y or N) all the selected genes are covered by heterozygous regions   
 
-The output will  be like:
+The output for the best 5 candidates (`OutPut.top_candidates`) will  be like:
 
-|   Indiv   | Selected_genes | Breakpoint_Count | Het_regions_count | Heterozygosity_Percent | Homo_donor_Pct |    DTH8(8\|4.33)    |  Ghd7.1(7\|29.62)  | Y_or_N |
-| :-------: | :------------: | :--------------: | :---------------: | :--------------------: | :------------: | :-----------------: | :----------------: | :----: |
-| BC1F1_85  |     2 \| 2     |        14        |        12         |        0.355251        |       0        |  (25.2)8_0\|8_25.2  | (1.2)7_28.8\|7_30  |   Y    |
-| BC1F1_91  |     2 \| 2     |        16        |        14         |        0.383562        |       0        |  (28.2)8_0\|8_28.2  | (0.6)7_29.4\|7_30  |   Y    |
-| BC1F1_151 |     2 \| 2     |        12        |        10         |        0.391781        |       0        | (18.9)8_1.8\|8_20.7 | (1.8)7_28.2\|7_30  |   Y    |
-| BC1F1_29  |     2 \| 2     |        15        |        12         |        0.414612        |       0        | (21.6)8_3.6\|8_25.2 | (27.9)7_2.1\|7_30  |   Y    |
-|  BC1F1_2  |     2 \| 2     |        19        |        16         |        0.421918        |       0        | (25.2)8_2.1\|8_27.3 | (24.6)7_5.4\|7_30  |   Y    |
-| BC1F1_140 |     2 \| 2     |        16        |        13         |        0.437443        |       0        |  (26.1)8_0\|8_26.1  | (8.4)7_21.6\|7_30  |   Y    |
-| BC1F1_191 |     2 \| 2     |        21        |        17         |        0.441096        |       0        |   (4.5)8_0\|8_4.5   | (1.5)7_28.5\|7_30  |   Y    |
-| BC1F1_77  |     2 \| 2     |        20        |        16         |        0.483105        |       0        |  (28.2)8_0\|8_28.2  | (15.9)7_14.1\|7_30 |   Y    |
-| BC1F1_69  |     2 \| 2     |        17        |        13         |        0.485845        |       0        | (22.8)8_3.6\|8_26.4 | (27.6)7_2.4\|7_30  |   Y    |
-| BC1F1_149 |     2 \| 2     |        19        |        15         |        0.485845        |       0        |  (3.9)8_0.9\|8_4.8  | (2.4)7_27.6\|7_30  |   Y    |
+\## Information for Top 5 best candidates ##
 
+|   Indiv   | Selected_genes | Breakpoint_Count | Het_regions_count | Heterozygosity_Percent | Homo_donor_Pct |   DTH8(8\|4.33)   |   xa5(5\|0.44)    | Y_or_N |
+| :-------: | :------------: | :--------------: | :---------------: | :--------------------: | :------------: | :---------------: | :---------------: | :----: |
+| BC1F1_17  |     2 \| 2     |        11        |        10         |        0.346119        |       0        |  (5.4)8_0\|8_5.4  |  (1.5)5_0\|5_1.5  |   Y    |
+| BC1F1_43  |     2 \| 2     |        21        |        16         |        0.378995        |       0        | (19.2)8_0\|8_19.2 | (29.7)5_0\|5_29.7 |   Y    |
+| BC1F1_194 |     2 \| 2     |        13        |        11         |        0.379909        |       0        |  (5.4)8_0\|8_5.4  | (29.7)5_0\|5_29.7 |   Y    |
+| BC1F1_91  |     2 \| 2     |        16        |        14         |        0.383562        |       0        | (28.2)8_0\|8_28.2 |  (2.1)5_0\|5_2.1  |   Y    |
+| BC1F1_188 |     2 \| 2     |        11        |        10         |        0.39726         |       0        | (10.8)8_0\|8_10.8 | (29.7)5_0\|5_29.7 |   Y    |

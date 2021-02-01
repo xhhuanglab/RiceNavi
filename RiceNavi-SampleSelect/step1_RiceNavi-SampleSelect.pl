@@ -45,17 +45,18 @@ my (%leftloci,%rightloci);
 my %count_het_regions;
 
 if(@ARGV < 3){
-  die "Usage: perl $0 <Genotyping Matrix> <Genelist> <OutPrefix> > OutFile";	
+  die "Usage: perl $0 <Genotyping Matrix> <Genelist> <OutFile>";	
 }else{
-  ($geno,$genelist,$generation_prefix) = @ARGV;	
+  ($geno,$genelist,$outputname) = @ARGV;	
 }
 
-
+open OUT, ">$outputname";
 
 open LIST, $genelist;
 while(<LIST>){
   chomp;
   s/ //;
+  next if /^\#/;
   my ($geneid,$genename,$chrom,$start,$end) = split/\t/;
   $chrom =~ s/chr0|chr//i;
   $start =~ s/\,//g; $end =~ s/\,//g;
@@ -129,9 +130,7 @@ for my $i (0..$#indivs){
   my $loci = $line2posi{$#two_dim_geno + 2};
   my $chrom = $1 if $loci =~ /(.+?)_/;
   $all_chrom_geno{$indivs[$i]}{$chrom} .= $two_dim_geno[$#two_dim_geno][$i];
-  #print "$all_chrom_geno{$indivs[$i]}{$chrom}\n";
   next if not defined $indiv2break{$indivs[$i]};
-  #print "$indivs[$i]\n";
   if(scalar @{$indiv2break{$indivs[$i]}} >= 2){ 
   	
     foreach my $gene (@candidates){
@@ -245,15 +244,15 @@ foreach my $indiv (@indivs){
 }
 
 
-print  "Indiv\tSelected_genes\tBreakpoint_Count\tHet_regions_count\tHeterozygosity_Percent\tHomo_donor_Pct\t";
+print OUT "Indiv\tSelected_genes\tBreakpoint_Count\tHet_regions_count\tHeterozygosity_Percent\tHomo_donor_Pct\t";
 my $genetits = '';
 foreach my $gene (@candidates){
 	my $start = sprintf("%.2f",$gene2start{$gene}/1000000);
   $genetits .= $gene.'('.$gene2chrom{$gene}.'|'.$start.')'."\t";
 }
 chop $genetits;
-print  "$genetits\tY_or_N\n";
+print OUT "$genetits\tY_or_N\n";
 
 foreach my $indiv (sort {$indiv_het_pct{$a}<=>$indiv_het_pct{$b}} keys%indiv_het_pct){
-    print  "$combined_info{$indiv}\n";	
+    print OUT "$combined_info{$indiv}\n";	
 }

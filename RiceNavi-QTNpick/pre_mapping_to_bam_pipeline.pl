@@ -3,6 +3,7 @@
 ## indexed by Bowtie2-build, for example: Bowtie2-build Rice_MSUv7.fa Rice_MSUv7
 
 use strict;
+use FindBin;
 
 my ($cfg,$fq1,$fq2,$sample_prefix);
 if(@ARGV < 4){
@@ -11,7 +12,7 @@ if(@ARGV < 4){
   ($cfg,$fq1,$fq2,$sample_prefix) = @ARGV;	
 }
 
-my ($gatk3,$samtools,$ref_genome);
+my ($bowtie2,$gatk3,$samtools,$ref_genome);
 
 system(qq(dos2unix $cfg));
 open CFG, $cfg;
@@ -20,6 +21,7 @@ while(<CFG>){
   chomp;
   s/\s+//;
   s/\r\n/\n/g;
+  $bowtie2 = $1 if /bowtie2=(.+)/i;
   $gatk3 = $1 if /GATK3=(.+)/i;
   $samtools = $1 if /samtools=(.+)/i;
   $ref_genome = $1 if /Ref_genome=(.+)/i;
@@ -38,7 +40,7 @@ my $genome_prefix = $1 if $ref_genome =~ /(.+)\.fa/;
 ##### bowtie2 mapping ########
 #############################
 print OUT "Mapping Started: ".localtime()."\n";
-system(qq(bowtie2 -p 30 -x $genome_prefix -1 $fq1 -2 $fq2 --rg-id $sample_prefix --rg "PL:ILLUMINA" --rg "SM:$sample_prefix" -S $sample_prefix/$sample_prefix.sam));
+system(qq($bowtie2 -p 30 -x $genome_prefix -1 $fq1 -2 $fq2 --rg-id $sample_prefix --rg "PL:ILLUMINA" --rg "SM:$sample_prefix" -S $sample_prefix/$sample_prefix.sam));
 system(qq($samtools view -bS $sample_prefix/$sample_prefix.sam > $sample_prefix/$sample_prefix.bam));
 system(qq($samtools sort --threads 30 -o $sample_prefix/$sample_prefix.sorted.bam $sample_prefix/$sample_prefix.bam));
 
