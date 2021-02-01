@@ -1,6 +1,4 @@
-RiceNavi
-
-
+### RiceNavi ###
 
 ### General Introduction
 
@@ -43,20 +41,20 @@ Before running, please install the required softwares  ([bowtie2](http://bowtie-
 
 \## e.g. ##
 
-bowtie2 = /tool/bowtie2-2.3.2/bowtie2
+bowtie2 = /tool/bowtie2-2.3.2/bowtie2  
 
-samtools = /tool/samtools-1.9/bin/samtools
-sambamba_soft = /tool/sambamba_v0.6.7
-GATK4 = /tool/GATK4/share/gatk4-4.1.3.0-0/gatk-package-4.1.3.0-local.jar
-GATK3 = /tool/GATKv3.7/GenomeAnalysisTK.jar
-configManta =/tool/manta/manta-1.6.0.centos6_x86_64/bin/configManta.py
-bam2fastq = /tool/bam2fastq-1.0.0/bam2fastq
+samtools = /tool/samtools-1.9/bin/samtools  
+sambamba_soft = /tool/sambamba_v0.6.7  
+GATK4 = /tool/GATK4/share/gatk4-4.1.3.0-0/gatk-package-4.1.3.0-local.jar  
+GATK3 = /tool/GATKv3.7/GenomeAnalysisTK.jar  
+configManta =/tool/manta/manta-1.6.0.centos6_x86_64/bin/configManta.py  
+bam2fastq = /tool/bam2fastq-1.0.0/bam2fastq  
 
-Ref_genome = /rice_genome/MSUv7/Rice_MSUv7.fa
+Ref_genome = /rice_genome/MSUv7/Rice_MSUv7.fa  
 
 #######
 
-After BAM file is generated, further steps could be performed.
+After BAM file is generated, further steps could be performed.  
 
 
 
@@ -68,7 +66,9 @@ Then the genotype file (`SamplePrefix.RiceNavi_Causal_Var.site.geno`) of the Use
 
 
 
-<u>Users can directly upload the sample's genotype file `SamplePrefix.RiceNavi_Causal_Var.site.geno` to our online [RiceNavi](http://www.xhhuanglab.cn/tool/RiceNavi.html) (QTNpick (User Sample) ) to pick the beneficial QTN(s) and find the donor samples<u>. The following steps for RiceNavi-QTNpick are not needed.</u>
+**Users can directly upload the sample's genotype file `SamplePrefix.RiceNavi_Causal_Var.site.geno` to our online [RiceNavi](http://www.xhhuanglab.cn/tool/RiceNavi.html) (QTNpick (User Sample) ) to pick the beneficial QTN(s) and find the donor samples. The following steps for RiceNavi-QTNpick are not needed.**
+
+
 
 
 
