@@ -60,7 +60,7 @@ After BAM file is generated, further steps could be performed.
 
 **Step1: Genotyping causal variant sites for User's sample.**  
 
-CMD: `perl /Path_to_RiceNavi/RiceNavi-QTNpick/step1_Indiv_CausalVar_genotyping.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`   
+CMD: `perl /Path_to_RiceNavi/RiceNavi-QTNpick/step1_Indiv_CausalVar_Calling.pl RiceNavi-QTNpick.cfg <Sample_BAM> <SamplePrefix>`   
 
 Then the genotype file (`SamplePrefix.RiceNavi_Causal_Var.site.geno`) of the User's sample will be generated in the folder `SamplePrefix`
 
