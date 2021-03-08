@@ -65,7 +65,7 @@ system(qq($sambamba_soft depth region $sample_bam -L $sambamba_bed -o $depthcall
 ###################################
 print "Start detecting SV by Manta..";
 mkdir "$prefix/$prefix.Manta";
-system(qq(configManta.py --bam $sample_bam --referenceFasta $Ref_genome --runDir $prefix/$prefix.Manta));
+system(qq($configManta --bam $sample_bam --referenceFasta $Ref_genome --runDir $prefix/$prefix.Manta));
 system(qq(python2 $prefix/$prefix.Manta/runWorkflow.py));
 system(qq(cp $prefix/$prefix.Manta/results/variants/candidateSV.vcf.gz $prefix/$prefix.4_manta.SV.gz));
 system(qq(gunzip -f $prefix/$prefix.4_manta.SV.gz));
