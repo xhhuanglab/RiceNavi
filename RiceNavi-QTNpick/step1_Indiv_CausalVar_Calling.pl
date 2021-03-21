@@ -48,7 +48,7 @@ mkdir $prefix;
 ############################################
 
 
-system(qq(samtools index $sample_bam)) if (! -f "$sample_bam.bai");
+system(qq($samtools index $sample_bam)) if (! -f "$sample_bam.bai");
 
 system(qq(java -jar $GATK4 HaplotypeCaller -R $Ref_genome --emit-ref-confidence GVCF -I $sample_bam -L $gatk4_intervals -O $GATK4_gvcf_output));
 
@@ -117,7 +117,7 @@ foreach (sort keys%nonnip_seq){
   print COVERAGE "$_\t$coverage\n";
 }
 
-
+close COVERAGE;
 
 
 
@@ -216,8 +216,9 @@ close MANTA;
 my %nonNip_geno;
 my %threshold;
 
-open NONQTG, $nonNip_QTG;
-while(<NONQTG>){
+
+open UNMAP, $nonNip_QTG;
+while(<UNMAP>){
   chomp;
   my @tmp = split/\t/;
   my ($gene,$threshold) = ($1,$2) if $tmp[0] =~ /(.+?)\|(.+)/;
@@ -227,9 +228,8 @@ while(<NONQTG>){
     $nonNip_geno{$gene} = '1|1';	
   }
 }
-close NONQTG;
+close UNMAP;
 
-system(qq(dos2unix $var_sites_file));
 open SITES, $var_sites_file or die "RiceNavi_Causal_Var.sites is not available..";
 my $site_header = <SITES>; chomp $site_header;
 
@@ -240,8 +240,10 @@ while(<SITES>){
   my @tmp = split/\t/;
   my $interval = $tmp[0]."\t".$tmp[1];
   my $site_info = $tmp[0]."\t".$tmp[1]."\t".$tmp[2]."\t".$tmp[5]."\t".$tmp[6];
-  if(/nonNip/){
-    $sample_geno = $nonNip_geno{$tmp[1]} || '0|0';
+  if(/Unmapped Reads/){
+  	#print "$tmp[1]\n";
+    $sample_geno = $nonNip_geno{$tmp[1]};
+    print "$tmp[1]\t$sample_geno\n";
   }
   elsif(/Manta/){
     $sample_geno = $manta_geno{$interval} || '|';
@@ -269,7 +271,6 @@ while(<SITES>){
   elsif(/GATK3/){
   	$sample_geno = '.|.';
     my $GATK3_base = $gatk3_geno{$interval};
-   # print "$GATK3_base\n";
     if($GATK3_base eq '0|0'){
       $sample_geno = $GATK3_base;
     }else{
@@ -277,7 +278,6 @@ while(<SITES>){
       for my $j (0..$#site_alleles){
         for my $k (0..$#site_alleles){
           if($site_alleles[$j].'|'.$site_alleles[$k] eq $GATK3_base){
-          	#print "1\n";
             $sample_geno = $j.'|'.$k;
             last;
           }
